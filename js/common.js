@@ -31,6 +31,27 @@ $(document).ready(function () {
     // スマホメニューの開閉
     $('#menu-open').click(() => $('#mobile-menu').css('display', 'flex').hide().fadeIn(300));
     $('#menu-close, #mobile-menu a').click(() => $('#mobile-menu').fadeOut(300));
+
+    // メールアドレスのコピー（メールソフト未設定の環境向け）
+    $(document).on('click', '.copy-email-btn', function () {
+        const email = $(this).data('email');
+        const $feedback = $(this).closest('.mail-card').find('.copy-feedback');
+        const showFeedback = () => {
+            $feedback.removeClass('opacity-0');
+            setTimeout(() => $feedback.addClass('opacity-0'), 1800);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(email).then(showFeedback);
+        } else {
+            const temp = document.createElement('textarea');
+            temp.value = email;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            showFeedback();
+        }
+    });
 });
 
 // 言語切り替え機能

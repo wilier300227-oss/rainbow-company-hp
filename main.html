@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/philosophy.css">
-    <link rel="stylesheet" href="css/contact.css">
 
 </head>
 
@@ -390,13 +389,22 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
-                <a href="mailto:wilier30.0227@gmail.com"
-                    class="block bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-shadow border border-gray-100">
+                <div class="mail-card bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-shadow border border-gray-100">
                     <img src="images/icon-mail.png" alt="" class="w-9 h-9 mx-auto mb-4">
                     <h4 class="font-bold mb-2 lang" data-ja="メール" data-en="Email">メール</h4>
-                    <p class="text-gray-500 text-xs leading-relaxed lang" data-ja="全般のお問い合わせはこちら"
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 lang" data-ja="全般のお問い合わせはこちら"
                         data-en="For general inquiries">全般のお問い合わせはこちら</p>
-                </a>
+                    <div class="flex items-center justify-center gap-2 flex-wrap">
+                        <a href="mailto:wilier30.0227@gmail.com"
+                            class="text-indigo-600 hover:text-indigo-800 text-xs font-bold break-all transition-colors">wilier30.0227@gmail.com</a>
+                        <button type="button" class="copy-email-btn text-gray-400 hover:text-gray-700 transition-colors"
+                            data-email="wilier30.0227@gmail.com" aria-label="メールアドレスをコピー" title="コピー">
+                            <i class="fas fa-copy text-xs"></i>
+                        </button>
+                    </div>
+                    <p class="copy-feedback text-[10px] text-green-600 mt-2 opacity-0 transition-opacity lang"
+                        data-ja="コピーしました" data-en="Copied to clipboard">コピーしました</p>
+                </div>
                 <a href="https://meguri-cycle.com/#contact" target="_blank" rel="noopener noreferrer"
                     class="block bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-shadow border border-gray-100">
                     <img src="images/icon-bicycle.png" alt="" class="w-9 h-9 mx-auto mb-4">
