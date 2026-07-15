@@ -140,6 +140,13 @@ nav.scrolled .lang-btn.active {
     font-weight: 900;
 }
 
+/* 「01〜04」の数字は文字幅が狭く6色グラデーションが1色にしか見えないため、
+   それぞれ虹の異なる帯域を割り当てて4色のバリエーションを出す */
+.num-01 { background: linear-gradient(90deg, #ff2400, #e8b71d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.num-02 { background: linear-gradient(90deg, #e8b71d, #1de840); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.num-03 { background: linear-gradient(90deg, #1ddde8, #2b1de8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.num-04 { background: linear-gradient(90deg, #2b1de8, #dd1de8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
 .reveal {
     opacity: 0;
     transform: translateY(30px);
