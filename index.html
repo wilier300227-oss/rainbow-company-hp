@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <script>
+        (function() {
+            var ua = navigator.userAgent.toLowerCase();
+            // iPhone, Androidスマホの場合はアニメーションを省略してメインへ
+            if (ua.indexOf('iphone') > -1 || (ua.indexOf('android') > -1 && ua.indexOf('mobile') > -1)) {
+                window.location.href = 'main.html';
+            }
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <title>RAINBOW｜石川県かほく市の個人事業（物販・IT業務効率化・自転車リユース）</title>
+    <meta name="description" content="石川県かほく市発。RAINBOW（屋号）は、リユース物販・IT業務効率化・自転車リユース（めぐり自転車）を営む個人事業です。古物商許可・自転車安全整備士・第二種電気工事士を保有。">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="RAINBOW">
+    <meta property="og:title" content="RAINBOW｜石川県かほく市の個人事業（物販・IT業務効率化・自転車リユース）">
+    <meta property="og:description" content="リユース物販・IT業務効率化・自転車リユース（めぐり自転車）を営む、石川県かほく市の個人事業です。">
+    <meta property="og:image" content="https://wilier300227-oss.github.io/rainbow-company-hp/images/ogp.jpg">
+    <meta property="og:url" content="https://wilier300227-oss.github.io/rainbow-company-hp/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RAINBOW｜石川県かほく市の個人事業">
+    <meta name="twitter:description" content="リユース物販・IT業務効率化・自転車リユース（めぐり自転車）を営む、石川県かほく市の個人事業です。">
+    <meta name="twitter:image" content="https://wilier300227-oss.github.io/rainbow-company-hp/images/ogp.jpg">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            /* 100vhの代わりにdvhを使うことでスマホのアドレスバー問題を解決 */
+            height: 100vh;
+            height: 100dvh; 
+            overflow: hidden;
+            background-color: #000;
+            font-family: 'Shippori Mincho', serif;
+        }
+
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* スマホでの動画再生を安定させるため */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* 少し明るく調整 */
+            background-image: radial-gradient(rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.8) 100%),
+                url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==');
+            z-index: 1;
+        }
+
+        .splash-text {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 90%; /* 画面幅いっぱいにしない */
+            max-width: 1000px;
+            color: #ffffff;
+            pointer-events: none;
+        }
+
+        .line {
+            display: block;
+            margin: 1rem 0;
+            line-height: 1.6; /* 行間を少し広げる */
+            
+            /* 折り返しを許可する設定 */
+            white-space: normal; 
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        #line1 {
+            font-size: clamp(1.4rem, 5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
+        }
+
+        #line2 {
+            font-size: clamp(0.9rem, 3vw, 2rem);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            margin-top: 20px;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        .char {
+            display: inline-block;
+            opacity: 0;
+            will-change: transform, opacity, filter;
+            /* 改行時の挙動を安定させる */
+            white-space: pre-wrap; 
+        }
+
+        /* --- SKIPボタン --- */
+        .skip-btn {
+            position: absolute;
+            bottom: 40px;
+            right: 20px;
+            z-index: 20;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            padding: 10px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            backdrop-filter: blur(5px);
+            touch-action: manipulation;
+        }
+
+        .skip-btn:hover, .skip-btn:active {
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
+            padding-right: 25px;
+        }
+
+        .skip-btn::after {
+            content: '→';
+            position: absolute;
+            right: 8px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skip-btn:hover::after, .skip-btn:active::after {
+            opacity: 1;
+        }
+
+        .fade-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            z-index: 30;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @media (max-width: 600px) {
+            .line {
+                width: 100%;
+            }
+            #line1 {
+                line-height: 1.4;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="video-container">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="video/night.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <div class="splash-text">
+        <div class="line" id="line1">まだ活かせるものを、めぐらせる。</div>
+        <div class="line" id="line2">物販 × IT × 自転車リユース ── RAINBOW</div>
+    </div>
+
+    <div class="skip-btn" id="skipBtn">SKIP</div>
+
+    <div class="fade-overlay"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let isNavigating = false;
+
+            const goNextPage = () => {
+                if (isNavigating) return;
+                isNavigating = true;
+
+                gsap.killTweensOf("*");
+
+                gsap.to(".fade-overlay", {
+                    duration: 0.6, 
+                    opacity: 1,
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        window.location.href = "main.html";
+                    }
+                });
+            };
+
+            const skipBtn = document.getElementById("skipBtn");
+            if(skipBtn) {
+                skipBtn.addEventListener("click", goNextPage);
+            }
+
+            /* --- テキスト分割処理 --- */
+            const splitText = (selector) => {
+                const element = document.querySelector(selector);
+                if (!element) return [];
+                const text = element.innerText;
+                element.innerHTML = text.split("").map(char => `<span class="char">${char}</span>`).join("");
+                return element.querySelectorAll(".char");
+            };
+
+            const charsLine1 = splitText("#line1");
+            const charsLine2 = splitText("#line2");
+
+            const tl = gsap.timeline();
+
+            tl
+                .to(skipBtn, { opacity: 1, duration: 0.5 }, 0)
+                .addLabel("start", "+=0.1")
+
+                // 1行目
+                .to(charsLine1, {
+                    duration: 0.8,
+                    opacity: 1,
+                    y: 0,
+                    filter: "blur(0px)",
+                    startAt: { y: 40, filter: "blur(15px)", opacity: 0 },
+                    stagger: 0.04,
+                    ease: "power4.out"
+                }, "start")
+
+                // 2行目
+                .to(charsLine2, {
+                    duration: 0.8,
+                    opacity: 1,
+                    y: 0,
+                    filter: "blur(0px)",
+                    startAt: { y: 30, filter: "blur(10px)", opacity: 0 },
+                    stagger: 0.03,
+                    ease: "power3.out"
+                }, "-=0.6")
+
+                // 輝きエフェクト
+                .to("#line1", {
+                    textShadow: "0 0 30px rgba(255,255,255, 0.5), 0 5px 15px rgba(0,0,0, 0.9)",
+                    duration: 2.0,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                }, "-=0.5")
+
+                // 背景動画ズーム
+                .to(".bg-video", {
+                    scale: 1.1,
+                    duration: 5,
+                    ease: "none"
+                }, 0)
+
+                .call(goNextPage, null, "+=1.5");
+        });
+    </script>
+</body>
+
+</html>

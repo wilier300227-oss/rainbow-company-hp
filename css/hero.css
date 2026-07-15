@@ -1,0 +1,28 @@
+/* --- Hero Visual with Video --- */
+.hero-visual {
+    position: relative;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+}
+
+.hero-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    object-fit: cover;
+    filter: brightness(0.7) contrast(1.1);
+}
+
+.hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.7) 100%);
+    z-index: 1;
+}

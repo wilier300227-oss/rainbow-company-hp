@@ -1,0 +1,13 @@
+/* --- Contact Form --- */
+.form-input {
+    width: 100%;
+    border-bottom: 2px solid #e5e7eb;
+    padding: 1rem 0;
+    outline: none;
+    transition: border-color 0.3s;
+    background: transparent;
+}
+
+.form-input:focus {
+    border-color: #111;
+}

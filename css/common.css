@@ -1,0 +1,345 @@
+:root {
+    --rainbow-grad: linear-gradient(90deg, #ff2400, #e8b71d, #1de840, #1ddde8, #2b1de8, #dd1de8);
+    --primary-dark: #111111;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #fff;
+    color: var(--primary-dark);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* --- Loader --- */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-bar {
+    width: 200px;
+    height: 2px;
+    background: #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-bar::after {
+    content: "";
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--rainbow-grad);
+    animation: loading 1.5s ease-in-out forwards;
+}
+
+@keyframes loading {
+    100% { left: 100%; }
+}
+
+/* --- Navigation --- */
+nav {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav.scrolled {
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: var(--primary-dark) !important;
+}
+
+nav.scrolled #nav-logo-text,
+nav.scrolled .nav-link {
+    color: var(--primary-dark);
+}
+
+.lang-switch-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+nav.scrolled .lang-switch-wrapper {
+    background: #f3f4f6;
+    border-color: #e5e7eb;
+}
+
+.lang-btn {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    /* デフォルトの文字色（ナビが透明な時） */
+    color: white; 
+}
+
+/* --- ホバー時の挙動を追加 --- */
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.7); /* 半透明の白 */
+    color: black;
+}
+
+/* アクティブ（現在選択中）のデザイン */
+.lang-btn.active {
+    background: white;
+    color: black;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- スクロール時（背景が白）のデザイン調整 --- */
+
+/* スクロール時のデフォルト文字色 */
+nav.scrolled .lang-btn {
+    color: #333;
+}
+
+/* スクロール時のホバー */
+nav.scrolled .lang-btn:hover {
+    background: rgba(0, 0, 0, 0.1); /* 薄いグレー */
+    color: black;
+}
+
+/* スクロール時のアクティブ */
+nav.scrolled .lang-btn.active {
+    background: black;
+    color: white;
+}
+
+/* --- Mobile Menu --- */
+#mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 100;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* --- Common Utilities & Animations --- */
+.text-gradient {
+    background: var(--rainbow-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* モダンボタン（通常） */
+.btn-modern {
+    padding: 1rem 2.5rem;
+    background: #111;
+    color: #fff;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.btn-modern::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--rainbow-grad);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.btn-modern:hover::before {
+    transform: translateX(100%);
+}
+
+/* レインボーボタン（控えめVer） */
+.btn-rainbow-glow {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 3.5rem;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 9999px;
+    background: transparent;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    letter-spacing: 0.1em;
+    z-index: 1;
+}
+
+.btn-rainbow-glow:hover {
+    border-color: transparent;
+    color: #fff;
+    background: linear-gradient(90deg, #ff2400, #e8b71d, #1de840, #1ddde8, #2b1de8, #dd1de8, #ff2400);
+    background-size: 400%;
+    animation: rainbow-move 10s linear infinite;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(29, 221, 232, 0.2);
+    transform: scale(1.02);
+}
+
+@keyframes rainbow-move {
+    0% { background-position: 0%; }
+    100% { background-position: 400%; }
+}
+
+/* スクロールダウン全体の配置 */
+.scroll-down {
+    position: absolute;
+    bottom: 30px; /* 下からの距離 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20; /* 動画より手前に表示 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.8;
+}
+
+/* "Scroll"の文字 */
+.scroll-down span {
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: sans-serif; /* お好みのフォントで */
+}
+
+/* マウスのボディ */
+.mouse {
+    width: 26px;
+    height: 42px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    position: relative;
+}
+
+/* 中のホイール（動く部分） */
+.wheel {
+    width: 4px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 2s infinite;
+}
+
+/* アニメーションの定義 */
+@keyframes scrollWheel {
+    0% {
+        opacity: 1;
+        top: 6px;
+    }
+    100% {
+        opacity: 0;
+        top: 24px; /* 下に移動しながら消える */
+    }
+}
+
+/* 既存の .scroll-down に以下（transitionなど）を追記・修正してください */
+.scroll-down {
+    /* ...（さっきの位置設定などはそのまま）... */
+    
+    /* フェードアウトのアニメーション設定 */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 1;      /* 最初は見える */
+    visibility: visible;
+}
+
+/* スクロールした時に付与するクラス */
+.scroll-down.is-hidden {
+    opacity: 0;      /* 透明にする */
+    visibility: hidden; /* マウスで触れないように完全に消す */
+    pointer-events: none; /* クリック判定も消す */
+}
+
+
+/* =========================================
+   スマホ表示時の文字サイズ・レイアウト修正
+   ========================================= */
+@media screen and (max-width: 768px) {
+
+    /* --- 1. 一番上の「価値あるモノを...」 --- */
+    /* 現状が小さすぎるため、読みやすいサイズに拡大 */
+    .hero-visual h2 {
+        font-size: 13px !important; 
+        letter-spacing: 0.15em !important; /* 文字間隔を調整 */
+        line-height: 1.8 !important;
+        margin-bottom: 15px !important;
+        width: 100%;
+        white-space: normal; /* 折り返しを許可 */
+    }
+
+    /* --- 2. メインの「良質なプロダクトを...」 --- */
+    /* 画面幅からはみ出さない最大サイズに調整 */
+    .hero-visual h1 {
+        font-size: 32px !important; /* インパクトを維持しつつ収まるサイズ */
+        line-height: 1.3 !important;
+        margin-bottom: 25px !important;
+    }
+
+    /* --- 3. 下の説明文「RAINBOWは...」 --- */
+    /* ここが一番読みづらいため、大幅にサイズアップと行間開け */
+    .hero-visual p {
+        font-size: 15px !important; /* 11px→15pxへ拡大 */
+        line-height: 1.9 !important; /* 行間を広げて読みやすく */
+        color: #e5e7eb !important;   /* 真っ白より少し目に優しい色 */
+        margin-bottom: 30px !important;
+    }
+
+    /* --- 4. 「企業理念を見る」ボタン --- */
+    /* 指で押しやすいサイズに拡大 */
+    .btn-rainbow-glow {
+        font-size: 14px !important;
+        padding: 14px 0 !important; /* 上下の幅を広げる */
+        width: 100%;             /* スマホでは幅いっぱいにしてもOK */
+        display: block;
+        text-align: center;
+    }
+
+    /* --- 5. 余白の調整 --- */
+    /* 画面端ギリギリにならないように左右の余白を確保 */
+    .hero-visual {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    .hero-visual .max-w-5xl {
+        width: 100%;
+    }
+}
