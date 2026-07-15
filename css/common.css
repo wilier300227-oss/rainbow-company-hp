@@ -289,6 +289,148 @@ nav.scrolled .lang-btn.active {
 }
 
 
+/* --- スクロール進捗バー（虹グラデーション） --- */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background: linear-gradient(90deg, #ff2400, #e8b71d, #1de840, #1ddde8, #2b1de8, #dd1de8);
+    z-index: 9998;
+    transition: width 0.1s linear;
+}
+
+/* --- セクション見出し（アイキャッチ）の虹アクセント --- */
+.eyebrow {
+    position: relative;
+    padding-left: 34px;
+}
+
+.eyebrow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--rainbow-grad);
+}
+
+/* --- カードのホバー演出 --- */
+.service-card:hover {
+    transform: translateY(-6px);
+}
+
+/* --- 事業者情報テーブルの行アクセント（虹色を1行ずつ） --- */
+.info-row {
+    position: relative;
+    padding-left: 20px;
+}
+
+.info-row::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 12px;
+    width: 3px;
+    border-radius: 2px;
+    background: #ff2400;
+}
+
+.info-row:nth-child(1)::before { background: #ff2400; }
+.info-row:nth-child(2)::before { background: #e8b71d; }
+.info-row:nth-child(3)::before { background: #1de840; }
+.info-row:nth-child(4)::before { background: #1ddde8; }
+.info-row:nth-child(5)::before { background: #2b1de8; }
+.info-row:nth-child(6)::before { background: #dd1de8; }
+.info-row:nth-child(7)::before { background: #ff2400; }
+.info-row:nth-child(8)::before { background: #e8b71d; }
+
+/* --- 白/グレーが続くセクションに彩りを足す装飾ブロブ --- */
+.rainbow-blobs {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.rainbow-blobs::before,
+.rainbow-blobs::after {
+    content: "";
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.18;
+    animation: blob-drift 24s ease-in-out infinite alternate;
+}
+
+@keyframes blob-drift {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(50px, 35px) scale(1.12); }
+}
+
+.rainbow-blobs--service::before {
+    top: -140px;
+    left: -100px;
+    background: radial-gradient(circle, #2b1de8, transparent 70%);
+}
+.rainbow-blobs--service::after {
+    bottom: -160px;
+    right: -120px;
+    background: radial-gradient(circle, #1ddde8, transparent 70%);
+    animation-delay: -12s;
+}
+
+.rainbow-blobs--strength::before {
+    top: -120px;
+    right: -100px;
+    background: radial-gradient(circle, #e8b71d, transparent 70%);
+}
+.rainbow-blobs--strength::after {
+    bottom: -160px;
+    left: -140px;
+    background: radial-gradient(circle, #1de840, transparent 70%);
+    animation-delay: -8s;
+}
+
+.rainbow-blobs--company::before {
+    top: -140px;
+    left: -120px;
+    background: radial-gradient(circle, #dd1de8, transparent 70%);
+}
+.rainbow-blobs--company::after {
+    bottom: -140px;
+    right: -100px;
+    background: radial-gradient(circle, #ff2400, transparent 70%);
+    animation-delay: -16s;
+}
+
+.rainbow-blobs--contact::before {
+    top: -120px;
+    right: -140px;
+    background: radial-gradient(circle, #1de840, transparent 70%);
+}
+.rainbow-blobs--contact::after {
+    bottom: -140px;
+    left: -100px;
+    background: radial-gradient(circle, #dd1de8, transparent 70%);
+    animation-delay: -4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rainbow-blobs::before,
+    .rainbow-blobs::after {
+        animation: none;
+    }
+}
+
 /* =========================================
    スマホ表示時の文字サイズ・レイアウト修正
    ========================================= */

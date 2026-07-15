@@ -26,7 +26,17 @@ $(document).ready(function () {
             $('nav').removeClass('scrolled');
         }
         reveal();
+        updateScrollProgress();
     });
+
+    // スクロール進捗バー（虹グラデーション）
+    function updateScrollProgress() {
+        const scrollTop = $(window).scrollTop();
+        const docHeight = $(document).height() - $(window).height();
+        const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        $('#scroll-progress').css('width', pct + '%');
+    }
+    updateScrollProgress();
 
     // スマホメニューの開閉
     $('#menu-open').click(() => $('#mobile-menu').css('display', 'flex').hide().fadeIn(300));

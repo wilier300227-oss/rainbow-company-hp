@@ -37,6 +37,7 @@
 </head>
 
 <body>
+    <div id="scroll-progress"></div>
 
     <div id="loader">
         <div class="loader-bar"></div>
@@ -114,7 +115,7 @@
     <section id="philosophy" class="py-32 px-6 lg:px-24">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
             <div class="lg:w-1/2 reveal">
-                <h3 class="text-xs font-black tracking-[0.4em] text-gray-400 mb-6 uppercase lang" data-ja="理念"
+                <h3 class="eyebrow text-xs font-black tracking-[0.4em] text-gray-400 mb-6 uppercase lang" data-ja="理念"
                     data-en="Philosophy">理念</h3>
                 <h2 class="text-3xl lg:text-5xl font-black mb-8 leading-tight lang" data-ja="多彩な仕事で、<br>暮らしに彩りを。"
                     data-en="Diverse work,<br>a more colorful daily life.">
@@ -165,19 +166,20 @@
         </div>
     </section>
 
-    <section id="service" class="py-32 bg-gray-50 px-6 lg:px-24">
-        <div class="max-w-7xl mx-auto">
+    <section id="service" class="relative py-32 bg-gray-50 px-6 lg:px-24">
+        <div class="rainbow-blobs rainbow-blobs--service"></div>
+        <div class="relative z-10 max-w-7xl mx-auto">
             <div class="mb-20 reveal">
-                <h3 class="text-xs font-black tracking-[0.4em] text-gray-400 mb-6 uppercase lang" data-ja="事業内容"
+                <h3 class="eyebrow text-xs font-black tracking-[0.4em] text-gray-400 mb-6 uppercase lang" data-ja="事業内容"
                     data-en="Business">事業内容</h3>
                 <h2 class="text-4xl lg:text-6xl font-black lang" data-ja="RAINBOWの3つの仕事" data-en="Three Lines of Work">
                     RAINBOWの3つの仕事</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 reveal">
-                <div class="bg-white p-12 rounded-3xl shadow-sm hover:shadow-xl transition-shadow flex flex-col">
-                    <div class="w-16 h-16 bg-blue-50 flex items-center justify-center rounded-2xl mb-8">
-                        <img src="images/icon-box.png" alt="" class="w-9 h-9">
+                <div class="service-card bg-white p-12 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="w-20 h-20 bg-blue-50 flex items-center justify-center rounded-2xl mb-8">
+                        <img src="images/icon-box.png" alt="" class="w-12 h-12">
                     </div>
                     <h4 class="text-xl font-bold mb-6 lang" data-ja="リユース物販" data-en="Reuse Commerce">
                         リユース物販</h4>
@@ -187,9 +189,9 @@
                         メルカリShopsなどのプラットフォームで、まだ価値のあるモノを必要とする方へお届けします。仕入れ・撮影・出品まで、EC現場での経験を活かして一貫して運営しています。
                     </p>
                 </div>
-                <div class="bg-white p-12 rounded-3xl shadow-sm hover:shadow-xl transition-shadow flex flex-col">
-                    <div class="w-16 h-16 bg-green-50 flex items-center justify-center rounded-2xl mb-8">
-                        <img src="images/icon-gear.png" alt="" class="w-9 h-9">
+                <div class="service-card bg-white p-12 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="w-20 h-20 bg-green-50 flex items-center justify-center rounded-2xl mb-8">
+                        <img src="images/icon-gear.png" alt="" class="w-12 h-12">
                     </div>
                     <h4 class="text-xl font-bold mb-6 lang" data-ja="IT業務効率化（RAINBOW工房）"
                         data-en="Workflow Automation">
@@ -204,9 +206,9 @@
                         class="inline-flex items-center gap-2 font-bold text-sm text-indigo-600 hover:text-indigo-800 transition-colors lang"
                         data-ja="ポートフォリオを見る →" data-en="View Portfolio →">ポートフォリオを見る →</a>
                 </div>
-                <div class="bg-white p-12 rounded-3xl shadow-sm hover:shadow-xl transition-shadow flex flex-col">
-                    <div class="w-16 h-16 bg-purple-50 flex items-center justify-center rounded-2xl mb-8">
-                        <img src="images/icon-bicycle.png" alt="" class="w-9 h-9">
+                <div class="service-card bg-white p-12 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="w-20 h-20 bg-purple-50 flex items-center justify-center rounded-2xl mb-8">
+                        <img src="images/icon-bicycle.png" alt="" class="w-12 h-12">
                     </div>
                     <h4 class="text-xl font-bold mb-6 lang" data-ja="自転車リユース（めぐり自転車）"
                         data-en="Bicycle Reuse">
@@ -236,10 +238,11 @@
         </div>
     </section>
 
-    <section id="strength" class="py-32 px-6 lg:px-24">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+    <section id="strength" class="relative py-32 px-6 lg:px-24">
+        <div class="rainbow-blobs rainbow-blobs--strength"></div>
+        <div class="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
             <div class="lg:w-1/3 reveal">
-                <h3 class="text-xs font-black tracking-[0.4em] text-gray-400 mb-6 uppercase lang" data-ja="RAINBOWの強み"
+                <h3 class="eyebrow text-xs font-black tracking-[0.4em] text-gray-400 mb-6 uppercase lang" data-ja="RAINBOWの強み"
                     data-en="Our Strength">RAINBOWの強み</h3>
                 <h2 class="text-4xl font-black mb-8 lang" data-ja="選ばれる、<br>4つの理由" data-en="Why Choose<br>RAINBOW">
                     選ばれる、<br>4つの理由</h2>
@@ -291,16 +294,17 @@
         </div>
     </section>
 
-    <section id="company" class="py-32 bg-gray-50 px-6 lg:px-24">
-        <div class="max-w-4xl mx-auto">
+    <section id="company" class="relative py-32 bg-gray-50 px-6 lg:px-24">
+        <div class="rainbow-blobs rainbow-blobs--company"></div>
+        <div class="relative z-10 max-w-4xl mx-auto">
             <div class="text-center mb-16 reveal">
-                <h3 class="text-xs font-black tracking-[0.4em] text-gray-400 mb-6 uppercase lang" data-ja="事業者概要"
+                <h3 class="eyebrow text-xs font-black tracking-[0.4em] text-gray-400 mb-6 uppercase lang" data-ja="事業者概要"
                     data-en="Profile">事業者概要</h3>
                 <h2 class="text-3xl lg:text-5xl font-black lang" data-ja="事業者情報" data-en="Business Info">事業者情報</h2>
             </div>
             <div class="bg-white p-8 lg:p-12 rounded-3xl shadow-sm reveal">
                 <dl class="space-y-8">
-                    <div class="flex flex-col md:flex-row border-b pb-4">
+                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
                         <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang" data-ja="屋号"
                             data-en="Trade Name">屋号</dt>
                         <dd class="w-full md:w-2/3 font-bold lang" data-ja="RAINBOW（個人事業）"
@@ -308,21 +312,21 @@
                             RAINBOW（個人事業）</dd>
                     </div>
 
-                    <div class="flex flex-col md:flex-row border-b pb-4">
+                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
                         <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang" data-ja="代表者"
                             data-en="Representative">代表者</dt>
                         <dd class="w-full md:w-2/3 font-medium text-sm lang" data-ja="高多 優典" data-en="Masanori Takata">
                             高多 優典</dd>
                     </div>
 
-                    <div class="flex flex-col md:flex-row border-b pb-4">
+                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
                         <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang" data-ja="所在地"
                             data-en="Location">所在地</dt>
                         <dd class="w-full md:w-2/3 font-medium text-sm lang" data-ja="石川県かほく市"
                             data-en="Kahoku City, Ishikawa Prefecture">石川県かほく市</dd>
                     </div>
 
-                    <div class="flex flex-col md:flex-row border-b pb-4">
+                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
                         <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang" data-ja="事業内容"
                             data-en="Business">事業内容</dt>
                         <dd class="w-full md:w-2/3 font-medium text-sm lang"
@@ -332,7 +336,7 @@
                         </dd>
                     </div>
 
-                    <div class="flex flex-col md:flex-row border-b pb-4">
+                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
                         <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang"
                             data-ja="古物商許可" data-en="Secondhand Dealer License">古物商許可</dt>
                         <dd class="w-full md:w-2/3 font-medium text-sm lang" data-ja="石川県公安委員会 第511090015059号（自転車類区分）"
@@ -341,7 +345,7 @@
                         </dd>
                     </div>
 
-                    <div class="flex flex-col md:flex-row border-b pb-4">
+                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
                         <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang"
                             data-ja="保有資格" data-en="Certifications">保有資格</dt>
                         <dd class="w-full md:w-2/3 font-medium text-sm lang"
@@ -351,7 +355,7 @@
                         </dd>
                     </div>
 
-                    <div class="flex flex-col md:flex-row border-b pb-4">
+                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
                         <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang"
                             data-ja="その他の事業基盤" data-en="Other Assets">その他の事業基盤</dt>
                         <dd class="w-full md:w-2/3 font-medium text-sm lang"
@@ -361,7 +365,7 @@
                         </dd>
                     </div>
 
-                    <div class="flex flex-col md:flex-row">
+                    <div class="info-row flex flex-col md:flex-row">
                         <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang"
                             data-ja="お問い合わせ" data-en="Contact">お問い合わせ</dt>
                         <dd class="w-full md:w-2/3 font-medium text-sm lang"
@@ -376,8 +380,9 @@
         </div>
     </section>
 
-    <section id="contact" class="py-32 px-6 lg:px-24 bg-white">
-        <div class="max-w-3xl mx-auto">
+    <section id="contact" class="relative py-32 px-6 lg:px-24 bg-white">
+        <div class="rainbow-blobs rainbow-blobs--contact"></div>
+        <div class="relative z-10 max-w-3xl mx-auto">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-4xl lg:text-6xl font-black mb-6 lang" data-ja="お気軽にご相談ください。"
                     data-en="Get in touch.">お気軽にご相談ください。</h2>
@@ -389,8 +394,10 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
-                <div class="mail-card bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-shadow border border-gray-100">
-                    <img src="images/icon-mail.png" alt="" class="w-9 h-9 mx-auto mb-4">
+                <div class="mail-card service-card bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300 border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-50 flex items-center justify-center rounded-full mb-4 mx-auto">
+                        <img src="images/icon-mail.png" alt="" class="w-9 h-9">
+                    </div>
                     <h4 class="font-bold mb-2 lang" data-ja="メール" data-en="Email">メール</h4>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4 lang" data-ja="全般のお問い合わせはこちら"
                         data-en="For general inquiries">全般のお問い合わせはこちら</p>
@@ -406,15 +413,19 @@
                         data-ja="コピーしました" data-en="Copied to clipboard">コピーしました</p>
                 </div>
                 <a href="https://meguri-cycle.com/#contact" target="_blank" rel="noopener noreferrer"
-                    class="block bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-shadow border border-gray-100">
-                    <img src="images/icon-bicycle.png" alt="" class="w-9 h-9 mx-auto mb-4">
+                    class="service-card block bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300 border border-gray-100">
+                    <div class="w-16 h-16 bg-purple-50 flex items-center justify-center rounded-full mb-4 mx-auto">
+                        <img src="images/icon-bicycle.png" alt="" class="w-9 h-9">
+                    </div>
                     <h4 class="font-bold mb-2 lang" data-ja="めぐり自転車" data-en="Meguri Cycle">めぐり自転車</h4>
                     <p class="text-gray-500 text-xs leading-relaxed lang" data-ja="自転車の買取・引取（LINE・フォーム）"
                         data-en="Bicycle buy-back & pickup">自転車の買取・引取（LINE・フォーム）</p>
                 </a>
                 <a href="https://wilier300227-oss.github.io/rainbow-portfolio/" target="_blank" rel="noopener noreferrer"
-                    class="block bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-shadow border border-gray-100">
-                    <img src="images/icon-gear.png" alt="" class="w-9 h-9 mx-auto mb-4">
+                    class="service-card block bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300 border border-gray-100">
+                    <div class="w-16 h-16 bg-green-50 flex items-center justify-center rounded-full mb-4 mx-auto">
+                        <img src="images/icon-gear.png" alt="" class="w-9 h-9">
+                    </div>
                     <h4 class="font-bold mb-2 lang" data-ja="IT業務効率化" data-en="Automation">IT業務効率化</h4>
                     <p class="text-gray-500 text-xs leading-relaxed lang" data-ja="実績・ご依頼はポートフォリオへ"
                         data-en="See portfolio & hire">実績・ご依頼はポートフォリオへ</p>
