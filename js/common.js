@@ -40,9 +40,7 @@ $(document).ready(function () {
             $feedback.removeClass('opacity-0');
             setTimeout(() => $feedback.addClass('opacity-0'), 1800);
         };
-        if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard.writeText(email).then(showFeedback);
-        } else {
+        const fallbackCopy = () => {
             const temp = document.createElement('textarea');
             temp.value = email;
             document.body.appendChild(temp);
@@ -50,6 +48,11 @@ $(document).ready(function () {
             document.execCommand('copy');
             document.body.removeChild(temp);
             showFeedback();
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(email).then(showFeedback).catch(fallbackCopy);
+        } else {
+            fallbackCopy();
         }
     });
 });
