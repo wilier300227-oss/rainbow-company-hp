@@ -30,7 +30,6 @@
         <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     </noscript>
 
-    <link rel="preload" as="image" href="images/ink-hero.webp" type="image/webp">
     <link rel="stylesheet" href="css/common.css">
 </head>
 
@@ -75,22 +74,18 @@
     </header>
 
     <main>
-        <section id="hero" class="hero">
-            <div class="container hero-inner">
-                <div>
-                    <p class="hero-eyebrow lang" data-ja="石川県かほく市の個人事業" data-en="A sole proprietorship in Kahoku, Ishikawa">石川県かほく市の個人事業</p>
-                    <h1 class="lang" data-ja="まだ活かせるものを、めぐらせる。" data-en="Keeping still-usable things in circulation.">まだ活かせるものを、めぐらせる。</h1>
-                    <p class="lang" data-ja="石川県かほく市の個人事業 RAINBOW。リユース物販、IT業務効率化、自転車リユースを営んでいます。" data-en="RAINBOW is a sole proprietorship in Kahoku, Ishikawa. We run reuse retail, IT workflow automation, and bicycle reuse.">石川県かほく市の個人事業 RAINBOW。リユース物販、IT業務効率化、自転車リユースを営んでいます。</p>
-                    <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary lang" data-ja="お取引のご相談" data-en="Business Inquiries">お取引のご相談</a>
-                        <a href="story.html" class="btn btn-ghost lang" data-ja="代表の物語を読む" data-en="Read the Founder's Story">代表の物語を読む</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <picture>
-                        <source srcset="images/ink-hero.webp" type="image/webp">
-                        <img src="images/ink-hero.png" alt="自転車のチェーンとレンチの墨絵" width="1600" height="873" fetchpriority="high">
-                    </picture>
+        <section id="hero" class="hero-video">
+            <video class="hero-bg" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                <source src="video/night.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <p class="hero-eyebrow lang" data-ja="石川県かほく市の個人事業" data-en="A sole proprietorship in Kahoku, Ishikawa">石川県かほく市の個人事業</p>
+                <h1 class="lang" data-ja="まだ活かせるものを、めぐらせる。" data-en="Keeping still-usable things in circulation.">まだ活かせるものを、めぐらせる。</h1>
+                <p class="lang" data-ja="石川県かほく市の個人事業 RAINBOW。リユース物販、IT業務効率化、自転車リユースを営んでいます。" data-en="RAINBOW is a sole proprietorship in Kahoku, Ishikawa. We run reuse retail, IT workflow automation, and bicycle reuse.">石川県かほく市の個人事業 RAINBOW。リユース物販、IT業務効率化、自転車リユースを営んでいます。</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-hero-primary lang" data-ja="お取引のご相談" data-en="Business Inquiries">お取引のご相談</a>
+                    <a href="story.html" class="btn btn-hero-ghost lang" data-ja="代表の物語を読む" data-en="Read the Founder's Story">代表の物語を読む</a>
                 </div>
             </div>
         </section>
