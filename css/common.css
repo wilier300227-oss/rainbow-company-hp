@@ -1,494 +1,638 @@
+/* ============================================================
+   RAINBOW common.css（2026-08 リニューアル）
+   方針A「一本の虹」: 白＋墨。虹は 4 箇所のみ
+   （#scroll-progress / h2 直下の線 / story の職歴の帯 / ロゴ）
+   ============================================================ */
+
 :root {
-    --rainbow-grad: linear-gradient(90deg, #ff2400, #e8b71d, #1de840, #1ddde8, #2b1de8, #dd1de8);
-    --primary-dark: #111111;
+  --bg: #ffffff;
+  --ink: #1f2328;
+  --ink-2: #57606a;
+  --line: #d0d7de;
+  --bg-2: #f6f8fa;
+  --rainbow: linear-gradient(90deg, #ff2400, #e8b71d, #1de840, #1ddde8, #2b1de8, #dd1de8);
+}
+
+/* ---------- リセット ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background-color: #fff;
-    color: var(--primary-dark);
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", "BIZ UDPGothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  -webkit-text-size-adjust: 100%;
 }
 
-/* --- Loader --- */
-#loader {
-    position: fixed;
-    inset: 0;
-    background: #fff;
-    z-index: 9999;
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--ink-2);
+}
+
+/* ---------- 見出し ---------- */
+h1,
+h2,
+h3 {
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0 0 24px;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+}
+
+/* 虹の使用箇所 2/4: h2 直下の短い線 */
+h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin-top: 16px;
+  background: var(--rainbow);
+}
+
+p {
+  margin: 0 0 24px;
+  max-width: 40em;
+}
+
+/* 許可番号などの英数字列 */
+.mono {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+/* 補助テキスト */
+.note {
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+/* ---------- レイアウト ---------- */
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 80px 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 128px 0;
+  }
+}
+
+/* ---------- スクロール進捗（虹の使用箇所 1/4） ---------- */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--rainbow);
+  z-index: 30;
+}
+
+/* ---------- ヘッダー ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  z-index: 20;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+}
+
+/* 虹の使用箇所 4/4: ロゴマーク（インラインSVGの虹アーチ） */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.logo svg {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+.logo .wordmark {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.global-nav {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .global-nav {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 24px;
+  }
 }
 
-.loader-bar {
-    width: 200px;
-    height: 2px;
-    background: #eee;
-    position: relative;
-    overflow: hidden;
+.global-nav a {
+  font-size: 15px;
+  text-decoration: none;
+  padding: 10px 0;
 }
 
-.loader-bar::after {
-    content: "";
-    position: absolute;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--rainbow-grad);
-    animation: loading 1.5s ease-in-out forwards;
+.global-nav a:hover {
+  text-decoration: underline;
+  color: var(--ink-2);
 }
 
-@keyframes loading {
-    100% { left: 100%; }
-}
-
-/* --- Navigation --- */
-nav {
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-nav.scrolled {
-    padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    color: var(--primary-dark) !important;
-}
-
-nav.scrolled #nav-logo-text,
-nav.scrolled .nav-link {
-    color: var(--primary-dark);
-}
-
-.lang-switch-wrapper {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 4px;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-nav.scrolled .lang-switch-wrapper {
-    background: #f3f4f6;
-    border-color: #e5e7eb;
+/* JP/EN 切替 */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .lang-btn {
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-size: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s;
-    /* デフォルトの文字色（ナビが透明な時） */
-    color: white; 
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+  background: none;
+  border: none;
+  padding: 12px 8px;
+  cursor: pointer;
 }
 
-/* --- ホバー時の挙動を追加 --- */
-.lang-btn:hover {
-    background: rgba(255, 255, 255, 0.7); /* 半透明の白 */
-    color: black;
-}
-
-/* アクティブ（現在選択中）のデザイン */
 .lang-btn.active {
-    background: white;
-    color: black;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
 }
 
-/* --- スクロール時（背景が白）のデザイン調整 --- */
-
-/* スクロール時のデフォルト文字色 */
-nav.scrolled .lang-btn {
-    color: #333;
+/* スマホメニューボタン（CSSの3本線） */
+.menu-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-/* スクロール時のホバー */
-nav.scrolled .lang-btn:hover {
-    background: rgba(0, 0, 0, 0.1); /* 薄いグレー */
-    color: black;
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
 }
 
-/* スクロール時のアクティブ */
-nav.scrolled .lang-btn.active {
-    background: black;
-    color: white;
-}
-
-/* --- Mobile Menu --- */
-#mobile-menu {
+@media (min-width: 900px) {
+  .menu-toggle {
     display: none;
-    position: fixed;
-    inset: 0;
-    background: #000;
-    z-index: 100;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+  }
 }
 
-/* --- Common Utilities & Animations --- */
-.text-gradient {
-    background: var(--rainbow-grad);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
+/* スマホメニュー本体 */
+.mobile-menu {
+  display: none;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
 }
 
-/* 「01〜04」の数字は文字幅が狭く6色グラデーションが1色にしか見えないため、
-   それぞれ虹の異なる帯域を割り当てて4色のバリエーションを出す */
-.num-01 { background: linear-gradient(90deg, #ff2400, #e8b71d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.num-02 { background: linear-gradient(90deg, #e8b71d, #1de840); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.num-03 { background: linear-gradient(90deg, #1ddde8, #2b1de8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.num-04 { background: linear-gradient(90deg, #2b1de8, #dd1de8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.mobile-menu.open {
+  display: block;
+  animation: menu-in 150ms ease-out;
+}
 
-.reveal {
+@keyframes menu-in {
+  from {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
+  }
 
-.reveal.active {
+  to {
     opacity: 1;
-    transform: translateY(0);
+  }
 }
 
-/* モダンボタン（通常） */
-.btn-modern {
-    padding: 1rem 2.5rem;
-    background: #111;
-    color: #fff;
-    letter-spacing: 0.1em;
-    font-weight: bold;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    display: inline-block;
-    border-radius: 5px;
+.mobile-menu a {
+  display: block;
+  padding: 14px 24px;
+  font-size: 16px;
+  text-decoration: none;
+  border-top: 1px solid var(--line);
 }
 
-.btn-modern::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--rainbow-grad);
-    transition: transform 0.4s ease;
-    z-index: -1;
+.mobile-menu a:first-child {
+  border-top: none;
 }
 
-.btn-modern:hover::before {
-    transform: translateX(100%);
+/* ---------- ボタン ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 32px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0.02em;
 }
 
-/* レインボーボタン（控えめVer） */
-.btn-rainbow-glow {
-    position: relative;
-    display: inline-block;
-    padding: 1rem 3.5rem;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 9999px;
-    background: transparent;
-    transition: all 0.5s ease;
-    overflow: hidden;
-    letter-spacing: 0.1em;
-    z-index: 1;
+.btn-primary {
+  background: var(--ink);
+  color: var(--bg);
+  border: 1px solid var(--ink);
 }
 
-.btn-rainbow-glow:hover {
-    border-color: transparent;
-    color: #fff;
-    background: linear-gradient(90deg, #ff2400, #e8b71d, #1de840, #1ddde8, #2b1de8, #dd1de8, #ff2400);
-    background-size: 400%;
-    animation: rainbow-move 10s linear infinite;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(29, 221, 232, 0.2);
-    transform: scale(1.02);
+.btn-primary:hover {
+  color: var(--bg);
+  text-decoration: underline;
 }
 
-@keyframes rainbow-move {
-    0% { background-position: 0%; }
-    100% { background-position: 400%; }
+.btn-ghost {
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--ink);
 }
 
-/* スクロールダウン全体の配置 */
-.scroll-down {
-    position: absolute;
-    bottom: 30px; /* 下からの距離 */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20; /* 動画より手前に表示 */
-    display: flex;
-    flex-direction: column;
+.btn-ghost:hover {
+  color: var(--ink-2);
+  text-decoration: underline;
+}
+
+/* ---------- ヒーロー ---------- */
+.hero {
+  padding: 64px 0 80px;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 96px 0 128px;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
     align-items: center;
-    gap: 10px;
-    opacity: 0.8;
+  }
 }
 
-/* "Scroll"の文字 */
-.scroll-down span {
-    color: #fff;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-family: sans-serif; /* お好みのフォントで */
+.hero-eyebrow {
+  font-size: 14px;
+  color: var(--ink-2);
+  margin-bottom: 16px;
 }
 
-/* マウスのボディ */
-.mouse {
-    width: 26px;
-    height: 42px;
-    border: 2px solid #fff;
-    border-radius: 20px;
-    position: relative;
+.hero h1 {
+  margin-bottom: 24px;
 }
 
-/* 中のホイール（動く部分） */
-.wheel {
-    width: 4px;
-    height: 8px;
-    background-color: #fff;
-    border-radius: 2px;
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scrollWheel 2s infinite;
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
 }
 
-/* アニメーションの定義 */
-@keyframes scrollWheel {
-    0% {
-        opacity: 1;
-        top: 6px;
-    }
-    100% {
-        opacity: 0;
-        top: 24px; /* 下に移動しながら消える */
-    }
+.hero-image img {
+  display: block;
+  width: 100%;
+  mix-blend-mode: multiply;
 }
 
-/* 既存の .scroll-down に以下（transitionなど）を追記・修正してください */
-.scroll-down {
-    /* ...（さっきの位置設定などはそのまま）... */
-    
-    /* フェードアウトのアニメーション設定 */
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    opacity: 1;      /* 最初は見える */
-    visibility: visible;
+@media (max-width: 767px) {
+  .hero-image {
+    margin-top: 48px;
+  }
 }
 
-/* スクロールした時に付与するクラス */
-.scroll-down.is-hidden {
-    opacity: 0;      /* 透明にする */
-    visibility: hidden; /* マウスで触れないように完全に消す */
-    pointer-events: none; /* クリック判定も消す */
+/* ---------- 事業内容（3列） ---------- */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin-top: 48px;
 }
 
-
-/* --- スクロール進捗バー（虹グラデーション） --- */
-#scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4px;
-    width: 0%;
-    background: linear-gradient(90deg, #ff2400, #e8b71d, #1de840, #1ddde8, #2b1de8, #dd1de8);
-    z-index: 9998;
-    transition: width 0.1s linear;
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
 }
 
-/* --- セクション見出し（アイキャッチ）の虹アクセント --- */
-.eyebrow {
-    position: relative;
-    padding-left: 34px;
+.service h3 {
+  margin: 24px 0 16px;
 }
 
-.eyebrow::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 22px;
-    height: 3px;
-    border-radius: 2px;
-    background: var(--rainbow-grad);
+.service img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  mix-blend-mode: multiply;
 }
 
-/* --- カードのホバー演出 --- */
-.service-card:hover {
-    transform: translateY(-6px);
+.service p {
+  margin-bottom: 16px;
 }
 
-/* --- 事業者情報テーブルの行アクセント（虹色を1行ずつ） --- */
-.info-row {
-    position: relative;
-    padding-left: 20px;
+/* ---------- 帳票（dl） ---------- */
+.data-table {
+  margin: 48px 0 0;
+  border-top: 1px solid var(--line);
 }
 
-.info-row::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 4px;
-    bottom: 12px;
-    width: 3px;
-    border-radius: 2px;
-    background: #ff2400;
+.data-table > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
 }
 
-.info-row:nth-child(1)::before { background: #ff2400; }
-.info-row:nth-child(2)::before { background: #e8b71d; }
-.info-row:nth-child(3)::before { background: #1de840; }
-.info-row:nth-child(4)::before { background: #1ddde8; }
-.info-row:nth-child(5)::before { background: #2b1de8; }
-.info-row:nth-child(6)::before { background: #dd1de8; }
-.info-row:nth-child(7)::before { background: #ff2400; }
-.info-row:nth-child(8)::before { background: #e8b71d; }
-
-/* --- 白/グレーが続くセクションに彩りを足す装飾ブロブ --- */
-.rainbow-blobs {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 0;
-    pointer-events: none;
+@media (min-width: 768px) {
+  .data-table > div {
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    padding: 20px 0;
+  }
 }
 
-.rainbow-blobs::before,
-.rainbow-blobs::after {
-    content: "";
-    position: absolute;
-    width: 480px;
-    height: 480px;
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.18;
-    animation: blob-drift 24s ease-in-out infinite alternate;
+.data-table dt {
+  font-size: 14px;
+  color: var(--ink-2);
 }
 
-@keyframes blob-drift {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(50px, 35px) scale(1.12); }
+.data-table dd {
+  margin: 0;
+  font-size: 16px;
 }
 
-.rainbow-blobs--service::before {
-    top: -140px;
-    left: -100px;
-    background: radial-gradient(circle, #2b1de8, transparent 70%);
-}
-.rainbow-blobs--service::after {
-    bottom: -160px;
-    right: -120px;
-    background: radial-gradient(circle, #1ddde8, transparent 70%);
-    animation-delay: -12s;
+@media (min-width: 768px) {
+  .data-table dd {
+    font-size: 17px;
+  }
 }
 
-.rainbow-blobs--strength::before {
-    top: -120px;
-    right: -100px;
-    background: radial-gradient(circle, #e8b71d, transparent 70%);
-}
-.rainbow-blobs--strength::after {
-    bottom: -160px;
-    left: -140px;
-    background: radial-gradient(circle, #1de840, transparent 70%);
-    animation-delay: -8s;
+/* ---------- お問い合わせ ---------- */
+.contact-email {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 32px 0;
 }
 
-.rainbow-blobs--company::before {
-    top: -140px;
-    left: -120px;
-    background: radial-gradient(circle, #dd1de8, transparent 70%);
-}
-.rainbow-blobs--company::after {
-    bottom: -140px;
-    right: -100px;
-    background: radial-gradient(circle, #ff2400, transparent 70%);
-    animation-delay: -16s;
+.contact-email .address {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 18px;
+  word-break: break-all;
 }
 
-.rainbow-blobs--contact::before {
-    top: -120px;
-    right: -140px;
-    background: radial-gradient(circle, #1de840, transparent 70%);
-}
-.rainbow-blobs--contact::after {
-    bottom: -140px;
-    left: -100px;
-    background: radial-gradient(circle, #dd1de8, transparent 70%);
-    animation-delay: -4s;
+.copy-btn {
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--ink);
+  border-radius: 4px;
+  min-height: 44px;
+  padding: 8px 20px;
+  cursor: pointer;
 }
 
+.copy-btn:hover {
+  color: var(--ink-2);
+  text-decoration: underline;
+}
+
+.contact-links {
+  margin-top: 32px;
+}
+
+.contact-links p {
+  margin-bottom: 8px;
+}
+
+/* ---------- フッター ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 48px 0 32px;
+}
+
+.site-footer .tagline {
+  margin: 16px 0 4px;
+  font-weight: 700;
+}
+
+.site-footer .note {
+  margin-bottom: 32px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-bottom: 32px;
+}
+
+.footer-nav a {
+  font-size: 14px;
+  padding: 8px 0;
+}
+
+.copyright {
+  font-size: 14px;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+/* ---------- story.html ---------- */
+.story-body {
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.story-body section {
+  padding: 40px 0;
+}
+
+@media (min-width: 768px) {
+  .story-body section {
+    padding: 56px 0;
+  }
+}
+
+/* 職歴の帯（虹の使用箇所 3/4） */
+.career-band {
+  display: flex;
+  gap: 2px;
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+}
+
+.career-band li {
+  flex: 1 1 0;
+  height: 10px;
+  overflow: hidden;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 1px;
+  color: transparent;
+}
+
+@media (min-width: 768px) {
+  .career-band li {
+    height: 14px;
+  }
+}
+
+/* --rainbow の6色を17項目へ線形補間した単色 */
+.career-band li:nth-child(1) { background: #ff2400; }
+.career-band li:nth-child(2) { background: #f85209; }
+.career-band li:nth-child(3) { background: #f18012; }
+.career-band li:nth-child(4) { background: #e9ae1b; }
+.career-band li:nth-child(5) { background: #b5c326; }
+.career-band li:nth-child(6) { background: #76d331; }
+.career-band li:nth-child(7) { background: #36e23c; }
+.career-band li:nth-child(8) { background: #1de660; }
+.career-band li:nth-child(9) { background: #1de294; }
+.career-band li:nth-child(10) { background: #1ddfc8; }
+.career-band li:nth-child(11) { background: #1fc5e8; }
+.career-band li:nth-child(12) { background: #2389e8; }
+.career-band li:nth-child(13) { background: #284de8; }
+.career-band li:nth-child(14) { background: #361de8; }
+.career-band li:nth-child(15) { background: #6e1de8; }
+.career-band li:nth-child(16) { background: #a51de8; }
+.career-band li:nth-child(17) { background: #dd1de8; }
+
+.career-caption {
+  font-size: 14px;
+  color: var(--ink-2);
+  margin: 8px 0 0;
+}
+
+.career-names {
+  font-size: 13px;
+  color: var(--ink-2);
+  margin: 16px 0 0;
+  max-width: none;
+}
+
+.story-profile {
+  border-top: 1px solid var(--line);
+  padding-top: 48px;
+}
+
+.story-profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  margin-top: 24px;
+}
+
+/* ---------- 規約ページ（policy / tokutei） ---------- */
+.legal-body {
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.legal-body section {
+  padding: 24px 0;
+}
+
+.legal-body ul {
+  padding-left: 1.5em;
+  max-width: 40em;
+}
+
+/* ---------- 動きの停止 ---------- */
 @media (prefers-reduced-motion: reduce) {
-    .rainbow-blobs::before,
-    .rainbow-blobs::after {
-        animation: none;
-    }
-}
 
-/* =========================================
-   スマホ表示時の文字サイズ・レイアウト修正
-   ========================================= */
-@media screen and (max-width: 768px) {
-
-    /* --- 1. 一番上の「価値あるモノを...」 --- */
-    /* 現状が小さすぎるため、読みやすいサイズに拡大 */
-    .hero-visual h2 {
-        font-size: 13px !important; 
-        letter-spacing: 0.15em !important; /* 文字間隔を調整 */
-        line-height: 1.8 !important;
-        margin-bottom: 15px !important;
-        width: 100%;
-        white-space: normal; /* 折り返しを許可 */
-    }
-
-    /* --- 2. メインの「良質なプロダクトを...」 --- */
-    /* 画面幅からはみ出さない最大サイズに調整 */
-    .hero-visual h1 {
-        font-size: 32px !important; /* インパクトを維持しつつ収まるサイズ */
-        line-height: 1.3 !important;
-        margin-bottom: 25px !important;
-    }
-
-    /* --- 3. 下の説明文「RAINBOWは...」 --- */
-    /* ここが一番読みづらいため、大幅にサイズアップと行間開け */
-    .hero-visual p {
-        font-size: 15px !important; /* 11px→15pxへ拡大 */
-        line-height: 1.9 !important; /* 行間を広げて読みやすく */
-        color: #e5e7eb !important;   /* 真っ白より少し目に優しい色 */
-        margin-bottom: 30px !important;
-    }
-
-    /* --- 4. 「企業理念を見る」ボタン --- */
-    /* 指で押しやすいサイズに拡大 */
-    .btn-rainbow-glow {
-        font-size: 14px !important;
-        padding: 14px 0 !important; /* 上下の幅を広げる */
-        width: 100%;             /* スマホでは幅いっぱいにしてもOK */
-        display: block;
-        text-align: center;
-    }
-
-    /* --- 5. 余白の調整 --- */
-    /* 画面端ギリギリにならないように左右の余白を確保 */
-    .hero-visual {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-    }
-    
-    .hero-visual .max-w-5xl {
-        width: 100%;
-    }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }

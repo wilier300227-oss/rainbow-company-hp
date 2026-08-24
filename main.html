@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAINBOW｜石川県かほく市の個人事業（物販・IT業務効率化・自転車リユース）</title>
-    <meta name="description" content="石川県かほく市発。RAINBOW（屋号）は、リユース物販・IT業務効率化・自転車リユース（めぐり自転車）を営む個人事業です。古物商許可・自転車安全整備士・第二種電気工事士を保有。">
+    <meta name="description" content="石川県かほく市の個人事業 RAINBOW。Amazon・メルカリShopsでの物販（自転車・スポーツ、アウトドア、工具）、IT業務効率化、自転車リユース（めぐり自転車）。古物商許可・自転車安全整備士・第二種電気工事士保有。">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
@@ -15,503 +15,247 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="RAINBOW">
     <meta property="og:title" content="RAINBOW｜石川県かほく市の個人事業（物販・IT業務効率化・自転車リユース）">
-    <meta property="og:description" content="リユース物販・IT業務効率化・自転車リユース（めぐり自転車）を営む、石川県かほく市の個人事業です。">
+    <meta property="og:description" content="石川県かほく市の個人事業 RAINBOW。Amazon・メルカリShopsでの物販（自転車・スポーツ、アウトドア、工具）、IT業務効率化、自転車リユース（めぐり自転車）。古物商許可・自転車安全整備士・第二種電気工事士保有。">
     <meta property="og:image" content="https://wilier300227-oss.github.io/rainbow-company-hp/images/ogp.jpg">
     <meta property="og:url" content="https://wilier300227-oss.github.io/rainbow-company-hp/main.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="RAINBOW｜石川県かほく市の個人事業">
-    <meta name="twitter:description" content="リユース物販・IT業務効率化・自転車リユース（めぐり自転車）を営む、石川県かほく市の個人事業です。">
+    <meta name="twitter:description" content="石川県かほく市の個人事業 RAINBOW。Amazon・メルカリShopsでの物販（自転車・スポーツ、アウトドア、工具）、IT業務効率化、自転車リユース（めぐり自転車）。古物商許可・自転車安全整備士・第二種電気工事士保有。">
     <meta name="twitter:image" content="https://wilier300227-oss.github.io/rainbow-company-hp/images/ogp.jpg">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Noto+Sans+JP:wght@300;400;700;900&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/philosophy.css">
-
 </head>
 
 <body>
     <div id="scroll-progress"></div>
 
-    <div id="loader">
-        <div class="loader-bar"></div>
-    </div>
-
-    <nav class="fixed w-full z-50 px-6 lg:px-12 py-6 flex justify-between items-center text-white">
-        <a href="#" class="flex items-center gap-3">
-            <div class="w-10 h-10 flex items-center justify-center bg-white rounded-lg shadow-lg text-xl">🌈</div>
-            <span class="font-black text-2xl tracking-tighter uppercase" id="nav-logo-text">RAINBOW</span>
-        </a>
-
-        <div class="flex items-center gap-6">
-            <div class="lang-switch-wrapper">
-                <div class="lang-btn active" onclick="switchLang('ja')">JP</div>
-                <div class="lang-btn" onclick="switchLang('en')">EN</div>
-            </div>
-
-            <div class="hidden lg:flex gap-8 font-bold text-[10px] tracking-widest uppercase items-center">
-                <a href="#philosophy" class="nav-link lang" data-ja="理念" data-en="Philosophy">理念</a>
-                <a href="#service" class="nav-link lang" data-ja="事業内容" data-en="Business">事業内容</a>
-                <a href="#strength" class="nav-link lang" data-ja="強み" data-en="Strength">強み</a>
-                <a href="#company" class="nav-link lang" data-ja="事業者概要" data-en="Profile">事業者概要</a>
-                <a href="#contact"
-                    class="bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 transition-colors lang"
-                    data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a>
-            </div>
-
-            <button id="menu-open" class="lg:hidden text-2xl focus:outline-none">☰</button>
-        </div>
-    </nav>
-
-    <div id="mobile-menu">
-        <button id="menu-close" class="absolute top-8 right-8 text-4xl text-white">&times;</button>
-        <a href="#" class="text-white text-2xl font-bold lang" data-ja="トップ" data-en="Top">トップ</a>
-        <a href="#philosophy" class="text-white text-2xl font-bold lang" data-ja="理念" data-en="Philosophy">理念</a>
-        <a href="#service" class="text-white text-2xl font-bold lang" data-ja="事業内容" data-en="Business">事業内容</a>
-        <a href="#strength" class="text-white text-2xl font-bold lang" data-ja="強み" data-en="Strength">強み</a>
-        <a href="#company" class="text-white text-2xl font-bold lang" data-ja="事業者概要" data-en="Profile">事業者概要</a>
-        <a href="#contact" class="text-white text-2xl font-bold lang" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a>
-    </div>
-
-    <section class="hero-visual flex items-center px-6 lg:px-24">
-        <video autoplay muted loop playsinline class="hero-bg-video">
-            <source src="video/night.mp4" type="video/mp4">
-        </video>
-        <div class="hero-video-overlay"></div>
-
-        <div class="z-10 max-w-5xl relative">
-            <h2 class="text-white text-sm lg:text-lg font-bold tracking-[0.5em] mb-6 reveal uppercase lang"
-                data-ja="石川県かほく市発 ・ 個人事業" data-en="Kahoku, Ishikawa ・ Sole Proprietor">石川県かほく市発 ・ 個人事業</h2>
-            <h1 class="text-white text-5xl lg:text-8xl font-black leading-tight mb-10 reveal">
-                <span class="lang" data-ja="モノと技術で、" data-en="Circulating value">モノと技術で、</span><br>
-                <span class="text-gradient lang" data-ja="価値をめぐらせる。" data-en="through goods &amp; tech.">価値をめぐらせる。</span>
-            </h1>
-            <p class="text-gray-300 text-base lg:text-xl max-w-2xl mb-12 reveal lang"
-                data-ja="RAINBOWは、石川県かほく市を拠点に、リユース物販・IT業務効率化・自転車リユース（めぐり自転車）を営む個人事業です。まだ活かせるモノや、手間のかかる作業を、必要とされる場所へ。確かな整備と技術、そして誠実な対応で、小さくても信頼される仕事を積み重ねています。"
-                data-en="RAINBOW is a sole proprietorship based in Kahoku City, Ishikawa. We run reuse commerce, IT workflow automation, and bicycle reuse (Meguri Cycle) — giving still-usable goods and time-consuming tasks a better place to go, and building small but trustworthy work through solid skills and sincere service.">
-                RAINBOWは、石川県かほく市を拠点に、リユース物販・IT業務効率化・自転車リユース（めぐり自転車）を営む個人事業です。まだ活かせるモノや、手間のかかる作業を、必要とされる場所へ。確かな整備と技術、そして誠実な対応で、小さくても信頼される仕事を積み重ねています。
-            </p>
-
-            <div class="reveal mt-8">
-                <a href="#service" class="btn-rainbow-glow">
-                    <span class="lang" data-ja="事業内容を見る" data-en="Our Business">事業内容を見る</span>
-                </a>
+    <header class="site-header">
+        <div class="container">
+            <a href="main.html" class="logo" aria-label="RAINBOW トップ">
+                <svg viewBox="12 25 76 42" role="img" aria-hidden="true" focusable="false">
+                    <path d="M 16 63 A 34 34 0 0 1 84 63" fill="none" stroke="#e0433c" stroke-width="6.2" stroke-linecap="round"/>
+                    <path d="M 21 63 A 29 29 0 0 1 79 63" fill="none" stroke="#f2994a" stroke-width="6.2" stroke-linecap="round"/>
+                    <path d="M 26 63 A 24 24 0 0 1 74 63" fill="none" stroke="#f2c94c" stroke-width="6.2" stroke-linecap="round"/>
+                    <path d="M 31 63 A 19 19 0 0 1 69 63" fill="none" stroke="#27ae60" stroke-width="6.2" stroke-linecap="round"/>
+                    <path d="M 36 63 A 14 14 0 0 1 64 63" fill="none" stroke="#2f80ed" stroke-width="6.2" stroke-linecap="round"/>
+                    <path d="M 41 63 A 9 9 0 0 1 59 63" fill="none" stroke="#9b51e0" stroke-width="6.2" stroke-linecap="round"/>
+                </svg>
+                <span class="wordmark">RAINBOW</span>
+            </a>
+            <div class="header-right">
+                <nav class="global-nav" aria-label="メインナビゲーション">
+                    <a href="#services" class="lang" data-ja="事業内容" data-en="Services">事業内容</a>
+                    <a href="#partners" class="lang" data-ja="取引先の方へ" data-en="For Partners">取引先の方へ</a>
+                    <a href="story.html" class="lang" data-ja="代表の物語" data-en="Founder's Story">代表の物語</a>
+                    <a href="#contact" class="lang" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a>
+                </nav>
+                <div class="lang-switch" role="group" aria-label="言語切替">
+                    <button type="button" class="lang-btn active" data-lang="ja">JP</button>
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button type="button" class="menu-toggle" aria-label="メニュー" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
-        <div class="scroll-down">
-            <span>Scroll</span>
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-        </div>
-    </section>
+        <nav class="mobile-menu" aria-label="モバイルナビゲーション">
+            <a href="#services" class="lang" data-ja="事業内容" data-en="Services">事業内容</a>
+            <a href="#partners" class="lang" data-ja="取引先の方へ" data-en="For Partners">取引先の方へ</a>
+            <a href="story.html" class="lang" data-ja="代表の物語" data-en="Founder's Story">代表の物語</a>
+            <a href="#contact" class="lang" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a>
+        </nav>
+    </header>
 
-    <section id="philosophy" class="py-32 px-6 lg:px-24">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
-            <div class="lg:w-1/2 reveal">
-                <h3 class="eyebrow text-xs font-black tracking-[0.4em] text-gray-400 mb-6 uppercase lang" data-ja="理念"
-                    data-en="Philosophy">理念</h3>
-                <h2 class="text-3xl lg:text-5xl font-black mb-8 leading-tight lang" data-ja="多彩な仕事で、<br>暮らしに彩りを。"
-                    data-en="Diverse work,<br>a more colorful daily life.">
-                    多彩な仕事で、<br>暮らしに彩りを。
-                </h2>
-                <p class="text-gray-600 leading-loose mb-6 lang"
-                    data-ja="社名の「RAINBOW」には、異なる七色が調和して美しい弧を描くように、「一つの専門に縛られず、多彩な事業で関わる人の暮らしを彩りたい」という思いを込めています。"
-                    data-en="The name 'RAINBOW' reflects a simple wish: just as seven colors harmonize into one arc, to add color to people's lives through diverse work rather than a single specialty.">
-                    社名の「RAINBOW」には、異なる七色が調和して美しい弧を描くように、「一つの専門に縛られず、多彩な事業で関わる人の暮らしを彩りたい」という思いを込めています。
-                </p>
-                <p class="text-gray-600 leading-loose lang"
-                    data-ja="物販・IT・自転車リユースという異なる事業に共通するのは、「売り手・買い手・世の中の三方すべてにとって気持ちのよい取引」という姿勢です。まだ使えるモノを活かし、無駄な手間を減らし、価値を正直に伝える。派手さより、目の前の一件を丁寧に積み重ねることを大切にしています。"
-                    data-en="What our reuse commerce, IT, and bicycle-reuse work share is a stance of 'Sanpo-yoshi' — fairness for the seller, the buyer, and society. We make the most of what still works, cut needless effort, and describe value honestly, valuing each careful job over flashiness.">
-                    物販・IT・自転車リユースという異なる事業に共通するのは、「売り手・買い手・世の中の三方すべてにとって気持ちのよい取引」という姿勢です。まだ使えるモノを活かし、無駄な手間を減らし、価値を正直に伝える。派手さより、目の前の一件を丁寧に積み重ねることを大切にしています。
-                </p>
-            </div>
-
-            <div class="lg:w-1/2 grid grid-cols-2 gap-4 reveal">
-                <div class="card-img-container">
-                    <img src="images/hito.jpg" alt="自転車のフレームを丁寧に拭き上げる整備の手元" class="card-bg-img">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h4 class="font-bold lang text-sm" data-ja="誠実な対応" data-en="Sincere Service">誠実な対応</h4>
-                    </div>
-                </div>
-                <div class="card-img-container">
-                    <img src="images/atukau.jpg" alt="工具でリアディレイラーを調整する整備士の手元" class="card-bg-img" style="object-position: 42% center;">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h4 class="font-bold lang text-sm" data-ja="確かな整備・品質" data-en="Quality & Care">確かな整備・品質</h4>
-                    </div>
-                </div>
-                <div class="card-img-container">
-                    <img src="images/mirai.jpg" alt="荷札を付けて梱包箱の横に置かれたリユース自転車" class="card-bg-img" style="object-position: 65% center;">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h4 class="font-bold lang text-sm" data-ja="リユースで循環" data-en="Reuse & Circulation">リユースで循環</h4>
-                    </div>
-                </div>
-                <div class="card-img-container">
-                    <img src="images/market.jpg" alt="集計グラフの入ったノートPCと軍手が並ぶ作業机" class="card-bg-img">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h4 class="font-bold lang text-sm" data-ja="IT×現場の視点" data-en="Tech × Field">IT×現場の視点</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="service" class="relative py-32 bg-gray-50 px-6 lg:px-24">
-        <div class="rainbow-blobs rainbow-blobs--service"></div>
-        <div class="relative z-10 max-w-7xl mx-auto">
-            <div class="mb-20 reveal">
-                <h3 class="eyebrow text-xs font-black tracking-[0.4em] text-gray-400 mb-6 uppercase lang" data-ja="事業内容"
-                    data-en="Business">事業内容</h3>
-                <h2 class="text-4xl lg:text-6xl font-black lang" data-ja="RAINBOWの3つの仕事" data-en="Three Lines of Work">
-                    RAINBOWの3つの仕事</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 reveal">
-                <div class="service-card bg-white p-12 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-                    <div class="w-20 h-20 bg-blue-50 flex items-center justify-center rounded-2xl mb-8">
-                        <img src="images/icon-box.png" alt="" class="w-12 h-12">
-                    </div>
-                    <h4 class="text-xl font-bold mb-6 lang" data-ja="リユース物販" data-en="Reuse Commerce">
-                        リユース物販</h4>
-                    <p class="text-gray-500 leading-relaxed mb-6 flex-grow lang"
-                        data-ja="メルカリShopsなどのプラットフォームで、まだ価値のあるモノを必要とする方へお届けします。仕入れ・撮影・出品まで、EC現場での経験を活かして一貫して運営しています。"
-                        data-en="Through platforms like Mercari Shops, we deliver still-valuable goods to the people who need them — handling sourcing, photography, and listing ourselves, drawing on hands-on EC experience.">
-                        メルカリShopsなどのプラットフォームで、まだ価値のあるモノを必要とする方へお届けします。仕入れ・撮影・出品まで、EC現場での経験を活かして一貫して運営しています。
-                    </p>
-                </div>
-                <div class="service-card bg-white p-12 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-                    <div class="w-20 h-20 bg-green-50 flex items-center justify-center rounded-2xl mb-8">
-                        <img src="images/icon-gear.png" alt="" class="w-12 h-12">
-                    </div>
-                    <h4 class="text-xl font-bold mb-6 lang" data-ja="IT業務効率化（RAINBOW工房）"
-                        data-en="Workflow Automation">
-                        IT業務効率化（RAINBOW工房）</h4>
-                    <p class="text-gray-500 leading-relaxed mb-6 flex-grow lang"
-                        data-ja="GAS（Google Apps Script）などを使い、日々の定型業務を自動化します。フォーム集計から通知、スプレッドシート整理まで。クラウドワークスにて「RAINBOW工房」の名で受託しています。"
-                        data-en="Using Google Apps Script and similar tools, we automate routine daily tasks — from form aggregation and notifications to spreadsheet cleanup. Available for hire on CrowdWorks as 'RAINBOW工房'.">
-                        GAS（Google Apps Script）などを使い、日々の定型業務を自動化します。フォーム集計から通知、スプレッドシート整理まで。クラウドワークスにて「RAINBOW工房」の名で受託しています。
-                    </p>
-                    <a href="https://wilier300227-oss.github.io/rainbow-portfolio/" target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 font-bold text-sm text-indigo-600 hover:text-indigo-800 transition-colors lang"
-                        data-ja="ポートフォリオを見る →" data-en="View Portfolio →">ポートフォリオを見る →</a>
-                </div>
-                <div class="service-card bg-white p-12 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-                    <div class="w-20 h-20 bg-purple-50 flex items-center justify-center rounded-2xl mb-8">
-                        <img src="images/icon-bicycle.png" alt="" class="w-12 h-12">
-                    </div>
-                    <h4 class="text-xl font-bold mb-6 lang" data-ja="自転車リユース（めぐり自転車）"
-                        data-en="Bicycle Reuse">
-                        自転車リユース（めぐり自転車）</h4>
-                    <p class="text-gray-500 leading-relaxed mb-6 flex-grow lang"
-                        data-ja="自転車安全整備士による、出張買取・出張引取サービス。整備して価値を上げ、次の乗り手へつなぎます。E-bike（電動アシスト）やスポーツ車の専門査定にも対応します。"
-                        data-en="A visiting buy-back and pickup service run by a certified bicycle safety mechanic. We service bikes to raise their value and pass them to the next rider, with expert appraisal for e-bikes and sport bikes.">
-                        自転車安全整備士による、出張買取・出張引取サービス。整備して価値を上げ、次の乗り手へつなぎます。E-bike（電動アシスト）やスポーツ車の専門査定にも対応します。
-                    </p>
-                    <a href="https://meguri-cycle.com/" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 font-bold text-sm text-indigo-600 hover:text-indigo-800 transition-colors lang"
-                        data-ja="めぐり自転車のサイトへ →" data-en="Visit Meguri Cycle →">めぐり自転車のサイトへ →</a>
-                </div>
-            </div>
-
-            <div class="mt-12 reveal">
-                <div class="bg-white/60 border border-dashed border-gray-300 rounded-3xl p-8 lg:p-10 flex flex-col md:flex-row md:items-center gap-4">
-                    <span class="inline-block self-start text-[10px] font-black tracking-widest uppercase text-gray-500 bg-gray-100 rounded-full px-4 py-1 lang"
-                        data-ja="今後の展望・準備中" data-en="Planned / In Preparation">今後の展望・準備中</span>
-                    <p class="text-gray-500 text-sm leading-relaxed lang"
-                        data-ja="これらの実績を積み重ねた先に、メーカーからの正規仕入れによるAmazon物販への展開を構想しています。現在は準備段階であり、まだ提供しているサービスではありません。"
-                        data-en="Building on this track record, we are exploring Amazon retail sourced directly from manufacturers. This is still in preparation and not yet an active service.">
-                        これらの実績を積み重ねた先に、メーカーからの正規仕入れによるAmazon物販への展開を構想しています。現在は準備段階であり、まだ提供しているサービスではありません。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="strength" class="relative py-32 px-6 lg:px-24">
-        <div class="rainbow-blobs rainbow-blobs--strength"></div>
-        <div class="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
-            <div class="lg:w-1/3 reveal">
-                <h3 class="eyebrow text-xs font-black tracking-[0.4em] text-gray-400 mb-6 uppercase lang" data-ja="RAINBOWの強み"
-                    data-en="Our Strength">RAINBOWの強み</h3>
-                <h2 class="text-4xl font-black mb-8 lang" data-ja="選ばれる、<br>4つの理由" data-en="Why Choose<br>RAINBOW">
-                    選ばれる、<br>4つの理由</h2>
-            </div>
-            <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
+    <main>
+        <section id="hero" class="hero">
+            <div class="container hero-inner">
                 <div>
-                    <span class="text-gradient num-01 text-4xl font-black mb-4 block">01</span>
-                    <h4 class="text-lg font-bold mb-4 lang" data-ja="資格に裏打ちされた品質" data-en="Licensed & Certified">
-                        資格に裏打ちされた品質</h4>
-                    <p class="text-gray-500 text-sm leading-loose lang"
-                        data-ja="古物商許可・自転車安全整備士・第二種電気工事士・Webクリエイター能力認定試験エキスパートを保有。資格に基づいた確かな判断と品質でお応えします。"
-                        data-en="Holder of a secondhand dealer license, certified bicycle safety mechanic, Type-II electrician, and Web Creator (Expert) certification — sound judgment and quality backed by real credentials.">
-                        古物商許可・自転車安全整備士・第二種電気工事士・Webクリエイター能力認定試験エキスパートを保有。資格に基づいた確かな判断と品質でお応えします。
-                    </p>
+                    <p class="hero-eyebrow lang" data-ja="石川県かほく市の個人事業" data-en="A sole proprietorship in Kahoku, Ishikawa">石川県かほく市の個人事業</p>
+                    <h1 class="lang" data-ja="まだ活かせるものを、めぐらせる。" data-en="Keeping still-usable things in circulation.">まだ活かせるものを、めぐらせる。</h1>
+                    <p class="lang" data-ja="石川県かほく市の個人事業 RAINBOW。リユース物販、IT業務効率化、自転車リユースを営んでいます。" data-en="RAINBOW is a sole proprietorship in Kahoku, Ishikawa. We run reuse retail, IT workflow automation, and bicycle reuse.">石川県かほく市の個人事業 RAINBOW。リユース物販、IT業務効率化、自転車リユースを営んでいます。</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary lang" data-ja="お取引のご相談" data-en="Business Inquiries">お取引のご相談</a>
+                        <a href="story.html" class="btn btn-ghost lang" data-ja="代表の物語を読む" data-en="Read the Founder's Story">代表の物語を読む</a>
+                    </div>
                 </div>
-                <div>
-                    <span class="text-gradient num-02 text-4xl font-black mb-4 block">02</span>
-                    <h4 class="text-lg font-bold mb-4 lang" data-ja="約18年の現場・接客経験" data-en="18 Years On-Site">
-                        約18年の現場・接客経験</h4>
-                    <p class="text-gray-500 text-sm leading-loose lang"
-                        data-ja="小売・物流・便利屋として、モノが動く全工程を現場で経験。だからこそ、お客様目線の丁寧で分かりやすい対応が身についています。"
-                        data-en="Retail, logistics, and a handyman business gave hands-on experience across the whole journey of how goods move — the root of clear, customer-minded service.">
-                        小売・物流・便利屋として、モノが動く全工程を現場で経験。だからこそ、お客様目線の丁寧で分かりやすい対応が身についています。
-                    </p>
-                </div>
-                <div>
-                    <span class="text-gradient num-03 text-4xl font-black mb-4 block">03</span>
-                    <h4 class="text-lg font-bold mb-4 lang" data-ja="IT×現場の掛け合わせ"
-                        data-en="Tech Meets the Field">
-                        IT×現場の掛け合わせ</h4>
-                    <p class="text-gray-500 text-sm leading-loose lang"
-                        data-ja="業務効率化のツールを自分で設計・開発できるのが強みです。現場で感じた「面倒」を、机上の空論ではなく実際に動く仕組みで解決します。"
-                        data-en="A key strength is designing and building automation tools firsthand — turning real on-site frustrations into working systems, not theory.">
-                        業務効率化のツールを自分で設計・開発できるのが強みです。現場で感じた「面倒」を、机上の空論ではなく実際に動く仕組みで解決します。
-                    </p>
-                </div>
-                <div>
-                    <span class="text-gradient num-04 text-4xl font-black mb-4 block">04</span>
-                    <h4 class="text-lg font-bold mb-4 lang" data-ja="個人だからできる、誠実で小回りの利く対応"
-                        data-en="Direct & Sincere Support">
-                        個人だからできる、誠実で小回りの利く対応</h4>
-                    <p class="text-gray-500 text-sm leading-loose lang"
-                        data-ja="マニュアル通りの機械的な対応や、担当者への丸投げはありません。代表が直接、お客様の疑問や不安に向き合い、ネット越しでも確かな信頼を築きます。"
-                        data-en="No robotic scripts and no handing you off to someone else. The owner personally addresses your questions and concerns, building genuine trust even online.">
-                        マニュアル通りの機械的な対応や、担当者への丸投げはありません。代表が直接、お客様の疑問や不安に向き合い、ネット越しでも確かな信頼を築きます。
-                    </p>
+                <div class="hero-image">
+                    <picture>
+                        <source srcset="images/ink-hero.webp" type="image/webp">
+                        <img src="images/ink-hero.png" alt="自転車のチェーンとレンチの墨絵" width="1600" height="873">
+                    </picture>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="company" class="relative py-32 bg-gray-50 px-6 lg:px-24">
-        <div class="rainbow-blobs rainbow-blobs--company"></div>
-        <div class="relative z-10 max-w-4xl mx-auto">
-            <div class="text-center mb-16 reveal">
-                <h3 class="eyebrow text-xs font-black tracking-[0.4em] text-gray-400 mb-6 uppercase lang" data-ja="事業者概要"
-                    data-en="Profile">事業者概要</h3>
-                <h2 class="text-3xl lg:text-5xl font-black lang" data-ja="事業者情報" data-en="Business Info">事業者情報</h2>
+        <section id="services">
+            <div class="container">
+                <h2 class="lang" data-ja="事業内容" data-en="Services">事業内容</h2>
+                <div class="services-grid">
+                    <div class="service">
+                        <picture>
+                            <source srcset="images/ink-goods.webp" type="image/webp">
+                            <img src="images/ink-goods.png" alt="ランタン、ヘルメット、テント、工具箱、段ボールが並ぶ棚の墨絵" width="900" height="900" loading="lazy">
+                        </picture>
+                        <h3 class="lang" data-ja="物販" data-en="Retail">物販</h3>
+                        <p class="lang" data-ja="Amazon・メルカリShopsで、自転車・スポーツ用品、アウトドア用品、工具・DIY用品を中心に販売しています。2024年開始。メーカー・卸からの仕入れを広げています。" data-en="We sell on Amazon and Mercari Shops, focusing on bicycles and sporting goods, outdoor gear, and tools and DIY supplies. Started in 2024. We are expanding sourcing from manufacturers and wholesalers.">Amazon・メルカリShopsで、自転車・スポーツ用品、アウトドア用品、工具・DIY用品を中心に販売しています。2024年開始。メーカー・卸からの仕入れを広げています。</p>
+                    </div>
+                    <div class="service">
+                        <picture>
+                            <source srcset="images/ink-it.webp" type="image/webp">
+                            <img src="images/ink-it.png" alt="表計算を開いたノートPCと手帳の墨絵" width="900" height="900" loading="lazy">
+                        </picture>
+                        <h3 class="lang" data-ja="IT業務効率化（RAINBOW工房）" data-en="Workflow Automation (RAINBOW Kobo)">IT業務効率化（RAINBOW工房）</h3>
+                        <p class="lang" data-ja="Google Apps Script などで、日々の定型業務を自動化します。フォーム集計、通知、スプレッドシートの整理まで。現場で働いてきた経験があるので、使う側の都合から設計します。クラウドワークスで「RAINBOW工房」として受託しています。" data-en="We automate routine daily tasks with tools like Google Apps Script, from form aggregation and notifications to spreadsheet cleanup. Years of hands-on work mean we design around the people who actually use it. Available for hire on CrowdWorks as &quot;RAINBOW Kobo.&quot;">Google Apps Script などで、日々の定型業務を自動化します。フォーム集計、通知、スプレッドシートの整理まで。現場で働いてきた経験があるので、使う側の都合から設計します。クラウドワークスで「RAINBOW工房」として受託しています。</p>
+                        <a href="https://wilier300227-oss.github.io/rainbow-portfolio/" target="_blank" rel="noopener noreferrer" class="lang" data-ja="ポートフォリオを見る →" data-en="View portfolio →">ポートフォリオを見る →</a>
+                    </div>
+                    <div class="service">
+                        <picture>
+                            <source srcset="images/ink-bike.webp" type="image/webp">
+                            <img src="images/ink-bike.png" alt="カゴ付き自転車と空気入れの墨絵" width="900" height="900" loading="lazy">
+                        </picture>
+                        <h3 class="lang" data-ja="めぐり自転車" data-en="Meguri Cycle">めぐり自転車</h3>
+                        <p class="lang" data-ja="自転車の買取と再販。写真で査定し、金額は先に確定。交渉なし。引き取りは出張で対応します。" data-en="Bicycle buy-back and resale. We appraise from photos and fix the price up front. No haggling. Pickup is done on-site.">自転車の買取と再販。写真で査定し、金額は先に確定。交渉なし。引き取りは出張で対応します。</p>
+                        <a href="https://meguri-cycle.com/" target="_blank" rel="noopener noreferrer" class="lang" data-ja="めぐり自転車のサイトへ →" data-en="Visit Meguri Cycle →">めぐり自転車のサイトへ →</a>
+                    </div>
+                </div>
             </div>
-            <div class="bg-white p-8 lg:p-12 rounded-3xl shadow-sm reveal">
-                <dl class="space-y-8">
-                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
-                        <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang" data-ja="屋号"
-                            data-en="Trade Name">屋号</dt>
-                        <dd class="w-full md:w-2/3 font-bold lang" data-ja="RAINBOW（個人事業）"
-                            data-en="RAINBOW (Sole Proprietorship)">
-                            RAINBOW（個人事業）</dd>
-                    </div>
+        </section>
 
-                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
-                        <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang" data-ja="代表者"
-                            data-en="Representative">代表者</dt>
-                        <dd class="w-full md:w-2/3 font-medium text-sm lang" data-ja="高多 優典" data-en="Masanori Takata">
-                            高多 優典</dd>
+        <section id="partners">
+            <div class="container">
+                <p class="note lang" data-ja="メーカー・卸のご担当者様" data-en="For manufacturer and wholesaler representatives">メーカー・卸のご担当者様</p>
+                <h2 class="lang" data-ja="取引先の方へ" data-en="For Business Partners">取引先の方へ</h2>
+                <p class="lang" data-ja="RAINBOWは石川県かほく市の個人事業として、2024年からAmazonとメルカリShopsで商品を販売しています。規模は小さいぶん、一点ずつ手をかけて扱います。お取引をご検討いただく際の情報をまとめました。" data-en="RAINBOW is a sole proprietorship in Kahoku, Ishikawa, selling on Amazon and Mercari Shops since 2024. Being small means we handle every item with care. Here is the information you may need when considering a partnership.">RAINBOWは石川県かほく市の個人事業として、2024年からAmazonとメルカリShopsで商品を販売しています。規模は小さいぶん、一点ずつ手をかけて扱います。お取引をご検討いただく際の情報をまとめました。</p>
+                <dl class="data-table">
+                    <div>
+                        <dt class="lang" data-ja="販路" data-en="Sales channels">販路</dt>
+                        <dd class="lang" data-ja="Amazon／メルカリShops" data-en="Amazon / Mercari Shops">Amazon／メルカリShops</dd>
                     </div>
-
-                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
-                        <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang" data-ja="所在地"
-                            data-en="Location">所在地</dt>
-                        <dd class="w-full md:w-2/3 font-medium text-sm lang" data-ja="石川県かほく市"
-                            data-en="Kahoku City, Ishikawa Prefecture">石川県かほく市</dd>
+                    <div>
+                        <dt class="lang" data-ja="取扱ジャンル" data-en="Product categories">取扱ジャンル</dt>
+                        <dd class="lang" data-ja="自転車・スポーツ用品／アウトドア用品／工具・DIY用品" data-en="Bicycles &amp; sporting goods / outdoor gear / tools &amp; DIY supplies">自転車・スポーツ用品／アウトドア用品／工具・DIY用品</dd>
                     </div>
-
-                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
-                        <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang" data-ja="事業内容"
-                            data-en="Business">事業内容</dt>
-                        <dd class="w-full md:w-2/3 font-medium text-sm lang"
-                            data-ja="リユース物販／IT業務効率化（RAINBOW工房）／自転車リユース（めぐり自転車）"
-                            data-en="Reuse commerce / IT workflow automation (RAINBOW工房) / bicycle reuse (Meguri Cycle)">
-                            リユース物販／IT業務効率化（RAINBOW工房）／自転車リユース（めぐり自転車）
-                        </dd>
+                    <div>
+                        <dt class="lang" data-ja="販売開始" data-en="Selling since">販売開始</dt>
+                        <dd class="lang" data-ja="2024年" data-en="2024">2024年</dd>
                     </div>
-
-                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
-                        <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang"
-                            data-ja="古物商許可" data-en="Secondhand Dealer License">古物商許可</dt>
-                        <dd class="w-full md:w-2/3 font-medium text-sm lang" data-ja="石川県公安委員会 第511090015059号（自転車類区分）"
-                            data-en="Ishikawa Public Safety Commission No. 511090015059 (Bicycles)">
-                            石川県公安委員会 第511090015059号（自転車類区分）
-                        </dd>
+                    <div>
+                        <dt class="lang" data-ja="保管" data-en="Storage">保管</dt>
+                        <dd class="lang" data-ja="自宅の一室を商品保管に充て、他の荷物と分けて管理しています" data-en="A dedicated room in our home is used for inventory, kept separate from personal belongings">自宅の一室を商品保管に充て、他の荷物と分けて管理しています</dd>
                     </div>
-
-                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
-                        <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang"
-                            data-ja="保有資格" data-en="Certifications">保有資格</dt>
-                        <dd class="w-full md:w-2/3 font-medium text-sm lang"
-                            data-ja="自転車安全整備士／第二種電気工事士／Webクリエイター能力認定試験エキスパート"
-                            data-en="Certified Bicycle Safety Mechanic / Type-II Electrician / Web Creator (Expert)">
-                            自転車安全整備士／第二種電気工事士／Webクリエイター能力認定試験エキスパート
-                        </dd>
+                    <div>
+                        <dt class="lang" data-ja="検品・梱包" data-en="Inspection &amp; packing">検品・梱包</dt>
+                        <dd class="lang" data-ja="入荷時に外装・数量・破損を確認し、発送時は緩衝材で保護します" data-en="On arrival we check packaging, quantity, and damage; shipments are protected with cushioning">入荷時に外装・数量・破損を確認し、発送時は緩衝材で保護します</dd>
                     </div>
-
-                    <div class="info-row flex flex-col md:flex-row border-b pb-4">
-                        <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang"
-                            data-ja="その他の事業基盤" data-en="Other Assets">その他の事業基盤</dt>
-                        <dd class="w-full md:w-2/3 font-medium text-sm lang"
-                            data-ja="賃貸不動産2棟（管理会社に運営委託）"
-                            data-en="2 rental properties (management outsourced)">
-                            賃貸不動産2棟（管理会社に運営委託）
-                        </dd>
+                    <div>
+                        <dt class="lang" data-ja="販売方針" data-en="Sales policy">販売方針</dt>
+                        <dd class="lang" data-ja="メーカー希望小売価格・指定価格を尊重します。正規ルートで仕入れた商品のみ扱います。商品説明は正確に記載し、レビューの操作は行いません" data-en="We respect manufacturer suggested retail prices and designated prices. We only handle goods sourced through authorized channels. Product descriptions are accurate, and we never manipulate reviews">メーカー希望小売価格・指定価格を尊重します。正規ルートで仕入れた商品のみ扱います。商品説明は正確に記載し、レビューの操作は行いません</dd>
                     </div>
-
-                    <div class="info-row flex flex-col md:flex-row">
-                        <dt class="w-full md:w-1/3 text-gray-400 text-[10px] font-bold uppercase lang"
-                            data-ja="お問い合わせ" data-en="Contact">お問い合わせ</dt>
-                        <dd class="w-full md:w-2/3 font-medium text-sm lang"
-                            data-ja="メール：wilier30.0227@gmail.com（※電話でのお問い合わせは受け付けておりません）"
-                            data-en="Email: wilier30.0227@gmail.com (We do not take phone inquiries)">
-                            メール：wilier30.0227@gmail.com（※電話でのお問い合わせは受け付けておりません）
-                        </dd>
+                    <div>
+                        <dt class="lang" data-ja="取引条件" data-en="Terms">取引条件</dt>
+                        <dd class="lang" data-ja="前払い（銀行振込）、少量ロットからのお取引に対応します" data-en="Advance payment by bank transfer; small-lot orders welcome">前払い（銀行振込）、少量ロットからのお取引に対応します</dd>
                     </div>
+                    <div>
+                        <dt class="lang" data-ja="許可" data-en="License">許可</dt>
+                        <dd><span class="lang" data-ja="古物商許可 石川県公安委員会 " data-en="Secondhand Dealer License, Ishikawa Public Safety Commission ">古物商許可 石川県公安委員会 </span><span class="mono">第511090015059号</span></dd>
+                    </div>
+                </dl>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary lang" data-ja="お取引のご相談" data-en="Business Inquiries">お取引のご相談</a>
+                </div>
+            </div>
+        </section>
 
+        <section id="founder">
+            <div class="container">
+                <h2 class="lang" data-ja="代表について" data-en="About the Founder">代表について</h2>
+                <p class="lang" data-ja="代表 高多 優典。40代、かほく市在住。スポーツ店、アウトドア用品、車工具の売り場から電気工事、プログラミングまで、約18年さまざまな現場で働いてきました。" data-en="Founder Masanori Takata, in his 40s, lives in Kahoku. Over about 18 years he has worked in many settings: sales floors for sporting goods, outdoor gear, and automotive tools, plus electrical work and programming.">代表 高多 優典。40代、かほく市在住。スポーツ店、アウトドア用品、車工具の売り場から電気工事、プログラミングまで、約18年さまざまな現場で働いてきました。</p>
+                <a href="story.html" class="lang" data-ja="代表の物語を読む →" data-en="Read the founder's story →">代表の物語を読む →</a>
+            </div>
+        </section>
+
+        <section id="company">
+            <div class="container">
+                <h2 class="lang" data-ja="事業者概要" data-en="Business Profile">事業者概要</h2>
+                <dl class="data-table">
+                    <div>
+                        <dt class="lang" data-ja="屋号" data-en="Trade name">屋号</dt>
+                        <dd class="lang" data-ja="RAINBOW（個人事業）" data-en="RAINBOW (sole proprietorship)">RAINBOW（個人事業）</dd>
+                    </div>
+                    <div>
+                        <dt class="lang" data-ja="代表者" data-en="Representative">代表者</dt>
+                        <dd class="lang" data-ja="高多 優典" data-en="Masanori Takata">高多 優典</dd>
+                    </div>
+                    <div>
+                        <dt class="lang" data-ja="所在地" data-en="Location">所在地</dt>
+                        <dd class="lang" data-ja="石川県かほく市" data-en="Kahoku City, Ishikawa, Japan">石川県かほく市</dd>
+                    </div>
+                    <div>
+                        <dt class="lang" data-ja="事業内容" data-en="Business">事業内容</dt>
+                        <dd class="lang" data-ja="物販（Amazon・メルカリShops）／IT業務効率化（RAINBOW工房）／自転車リユース（めぐり自転車）" data-en="Retail (Amazon / Mercari Shops) / IT workflow automation (RAINBOW Kobo) / bicycle reuse (Meguri Cycle)">物販（Amazon・メルカリShops）／IT業務効率化（RAINBOW工房）／自転車リユース（めぐり自転車）</dd>
+                    </div>
+                    <div>
+                        <dt class="lang" data-ja="古物商許可" data-en="Secondhand dealer license">古物商許可</dt>
+                        <dd><span class="lang" data-ja="石川県公安委員会 " data-en="Ishikawa Public Safety Commission ">石川県公安委員会 </span><span class="mono">第511090015059号</span><span class="lang" data-ja="（自転車類区分）" data-en=" (bicycle category)">（自転車類区分）</span></dd>
+                    </div>
+                    <div>
+                        <dt class="lang" data-ja="保有資格" data-en="Certifications">保有資格</dt>
+                        <dd class="lang" data-ja="自転車安全整備士／第二種電気工事士／Webクリエイター能力認定試験エキスパート" data-en="Certified Bicycle Safety Mechanic / Type II Electrician / Web Creator Certification (Expert)">自転車安全整備士／第二種電気工事士／Webクリエイター能力認定試験エキスパート</dd>
+                    </div>
+                    <div>
+                        <dt class="lang" data-ja="その他の事業基盤" data-en="Other business assets">その他の事業基盤</dt>
+                        <dd class="lang" data-ja="賃貸不動産2棟（管理会社に運営委託）" data-en="Two rental properties (operation entrusted to a management company)">賃貸不動産2棟（管理会社に運営委託）</dd>
+                    </div>
                 </dl>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="relative py-32 px-6 lg:px-24 bg-white">
-        <div class="rainbow-blobs rainbow-blobs--contact"></div>
-        <div class="relative z-10 max-w-3xl mx-auto">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl lg:text-6xl font-black mb-6 lang" data-ja="お気軽にご相談ください。"
-                    data-en="Get in touch.">お気軽にご相談ください。</h2>
-                <p class="text-gray-500 lang"
-                    data-ja="各サービスへのお問い合わせ・ご相談を承っています。ご連絡はメール、または各サービスの窓口からどうぞ。"
-                    data-en="We welcome inquiries about any of our services — by email, or through each service's own contact channel.">
-                    各サービスへのお問い合わせ・ご相談を承っています。ご連絡はメール、または各サービスの窓口からどうぞ。
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
-                <div class="mail-card service-card bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300 border border-gray-100">
-                    <div class="w-16 h-16 bg-blue-50 flex items-center justify-center rounded-full mb-4 mx-auto">
-                        <img src="images/icon-mail.png" alt="" class="w-9 h-9">
-                    </div>
-                    <h4 class="font-bold mb-2 lang" data-ja="メール" data-en="Email">メール</h4>
-                    <p class="text-gray-500 text-xs leading-relaxed mb-4 lang" data-ja="全般のお問い合わせはこちら"
-                        data-en="For general inquiries">全般のお問い合わせはこちら</p>
-                    <div class="flex items-center justify-center gap-2 flex-wrap">
-                        <a href="mailto:wilier30.0227@gmail.com"
-                            class="text-indigo-600 hover:text-indigo-800 text-xs font-bold break-all transition-colors">wilier30.0227@gmail.com</a>
-                        <button type="button" class="copy-email-btn text-gray-400 hover:text-gray-700 transition-colors"
-                            data-email="wilier30.0227@gmail.com" aria-label="メールアドレスをコピー" title="コピー">
-                            <i class="fas fa-copy text-xs"></i>
-                        </button>
-                    </div>
-                    <p class="copy-feedback text-[10px] text-green-600 mt-2 opacity-0 transition-opacity lang"
-                        data-ja="コピーしました" data-en="Copied to clipboard">コピーしました</p>
+        <section id="contact">
+            <div class="container">
+                <h2 class="lang" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</h2>
+                <p class="lang" data-ja="お取引のご相談、業務効率化のご依頼、自転車のことは、メールでご連絡ください。2営業日以内に返信します。電話は設けていません。" data-en="For business inquiries, automation projects, or anything bicycle-related, please email us. We reply within two business days. We do not have a phone line.">お取引のご相談、業務効率化のご依頼、自転車のことは、メールでご連絡ください。2営業日以内に返信します。電話は設けていません。</p>
+                <div class="contact-email">
+                    <a href="mailto:wilier30.0227@gmail.com" class="address">wilier30.0227@gmail.com</a>
+                    <button type="button" class="copy-btn" data-email="wilier30.0227@gmail.com" aria-label="メールアドレスをコピー"><span class="lang" data-ja="コピー" data-en="Copy">コピー</span></button>
                 </div>
-                <a href="https://meguri-cycle.com/#contact" target="_blank" rel="noopener noreferrer"
-                    class="service-card block bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300 border border-gray-100">
-                    <div class="w-16 h-16 bg-purple-50 flex items-center justify-center rounded-full mb-4 mx-auto">
-                        <img src="images/icon-bicycle.png" alt="" class="w-9 h-9">
-                    </div>
-                    <h4 class="font-bold mb-2 lang" data-ja="めぐり自転車" data-en="Meguri Cycle">めぐり自転車</h4>
-                    <p class="text-gray-500 text-xs leading-relaxed lang" data-ja="自転車の買取・引取（LINE・フォーム）"
-                        data-en="Bicycle buy-back & pickup">自転車の買取・引取（LINE・フォーム）</p>
-                </a>
-                <a href="https://wilier300227-oss.github.io/rainbow-portfolio/" target="_blank" rel="noopener noreferrer"
-                    class="service-card block bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300 border border-gray-100">
-                    <div class="w-16 h-16 bg-green-50 flex items-center justify-center rounded-full mb-4 mx-auto">
-                        <img src="images/icon-gear.png" alt="" class="w-9 h-9">
-                    </div>
-                    <h4 class="font-bold mb-2 lang" data-ja="IT業務効率化" data-en="Automation">IT業務効率化</h4>
-                    <p class="text-gray-500 text-xs leading-relaxed lang" data-ja="実績・ご依頼はポートフォリオへ"
-                        data-en="See portfolio & hire">実績・ご依頼はポートフォリオへ</p>
-                </a>
-            </div>
-            <p class="text-center text-gray-400 text-xs mt-10 lang"
-                data-ja="※ 電話でのお問い合わせは現在受け付けておりません。" data-en="※ We do not currently take phone inquiries.">
-                ※ 電話でのお問い合わせは現在受け付けておりません。
-            </p>
-        </div>
-    </section>
-
-    <footer class="bg-gray-900 text-white py-16 px-6 lg:px-24">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 mb-12 items-start">
-
-            <div>
-                <div class="flex items-center gap-3 mb-6">
-                    <div>
-                        <a href="index.html" class="flex items-center gap-3 mb-6 hover:opacity-80 transition-opacity">
-                            <div
-                                class="w-8 h-8 flex items-center justify-center bg-white text-black rounded-lg shadow-lg text-lg">
-                                🌈</div>
-                            <span class="font-black text-xl tracking-tighter uppercase">RAINBOW</span>
-                        </a>
-                        <p class="text-gray-400 text-sm leading-relaxed lang"
-                            data-ja="モノと技術で、価値をめぐらせる。<br>石川県かほく市の個人事業です。"
-                            data-en="Circulating value through goods and tech.<br>A sole proprietorship in Kahoku, Ishikawa.">
-                            モノと技術で、価値をめぐらせる。<br>石川県かほく市の個人事業です。
-                        </p>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-3 mt-6">
-                    <a href="https://meguri-cycle.com/" target="_blank" rel="noopener noreferrer"
-                        class="text-sm text-gray-300 hover:text-white transition-colors lang" data-ja="めぐり自転車 →"
-                        data-en="Meguri Cycle →">めぐり自転車 →</a>
-                    <a href="https://wilier300227-oss.github.io/rainbow-portfolio/" target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-sm text-gray-300 hover:text-white transition-colors lang"
-                        data-ja="RAINBOW工房 ポートフォリオ →" data-en="RAINBOW工房 Portfolio →">RAINBOW工房 ポートフォリオ →</a>
+                <div class="contact-links">
+                    <p><span class="lang" data-ja="自転車の買取・引取 → " data-en="Bicycle buy-back &amp; pickup → ">自転車の買取・引取 → </span><a href="https://meguri-cycle.com/" target="_blank" rel="noopener noreferrer">meguri-cycle.com</a></p>
+                    <p><span class="lang" data-ja="効率化の実績・ご依頼 → " data-en="Automation work &amp; requests → ">効率化の実績・ご依頼 → </span><a href="https://wilier300227-oss.github.io/rainbow-portfolio/" target="_blank" rel="noopener noreferrer" class="lang" data-ja="ポートフォリオ" data-en="Portfolio">ポートフォリオ</a></p>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <div>
-                <h4 class="font-bold mb-6 text-gray-500 text-xs tracking-widest uppercase lang" data-ja="サイトマップ"
-                    data-en="Sitemap">サイトマップ</h4>
-                <ul class="space-y-4">
-                    <li><a href="#philosophy" class="hover:text-gray-300 transition-colors lang" data-ja="理念"
-                            data-en="Philosophy">理念</a></li>
-                    <li><a href="#service" class="hover:text-gray-300 transition-colors lang" data-ja="事業内容"
-                            data-en="Business">事業内容</a></li>
-                    <li><a href="#strength" class="hover:text-gray-300 transition-colors lang" data-ja="強み"
-                            data-en="Strength">強み</a></li>
-                    <li><a href="#company" class="hover:text-gray-300 transition-colors lang" data-ja="事業者概要"
-                            data-en="Profile">事業者概要</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="font-bold mb-6 text-gray-500 text-xs tracking-widest uppercase lang" data-ja="事業者情報"
-                    data-en="Business Info">事業者情報</h4>
-
-                <p class="mb-2 font-bold lang" data-ja="RAINBOW（屋号）" data-en="RAINBOW (Trade Name)">
-                    RAINBOW（屋号）
-                </p>
-
-                <p class="text-gray-400 text-sm mb-6 lang" data-ja="石川県かほく市"
-                    data-en="Kahoku City, Ishikawa Pref., Japan">
-                    石川県かほく市
-                </p>
-                <a href="#contact"
-                    class="inline-block border border-gray-600 px-6 py-2 rounded-full text-sm hover:bg-white hover:text-black transition-all lang"
-                    data-ja="お問い合わせ" data-en="Contact">
-                    お問い合わせ
-                </a>
-            </div>
-        </div>
-
-        <div
-            class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-            <p>&copy; 2026 RAINBOW. All Rights Reserved.</p>
-            <div class="flex gap-6 mt-4 md:mt-0">
-                <a href="policy.html" class="hover:text-white transition-colors lang" data-ja="プライバシーポリシー"
-                    data-en="Privacy Policy">プライバシーポリシー</a>
-                <a href="tokutei.html" class="hover:text-white transition-colors lang" data-ja="特定商取引法に基づく表記"
-                    data-en="Legal Information">特定商取引法に基づく表記</a>
-            </div>
+    <footer class="site-footer">
+        <div class="container">
+            <a href="main.html" class="logo" aria-label="RAINBOW トップ">
+                <svg viewBox="12 25 76 42" role="img" aria-hidden="true" focusable="false">
+                    <path d="M 16 63 A 34 34 0 0 1 84 63" fill="none" stroke="#e0433c" stroke-width="6.2" stroke-linecap="round"/>
+                    <path d="M 21 63 A 29 29 0 0 1 79 63" fill="none" stroke="#f2994a" stroke-width="6.2" stroke-linecap="round"/>
+                    <path d="M 26 63 A 24 24 0 0 1 74 63" fill="none" stroke="#f2c94c" stroke-width="6.2" stroke-linecap="round"/>
+                    <path d="M 31 63 A 19 19 0 0 1 69 63" fill="none" stroke="#27ae60" stroke-width="6.2" stroke-linecap="round"/>
+                    <path d="M 36 63 A 14 14 0 0 1 64 63" fill="none" stroke="#2f80ed" stroke-width="6.2" stroke-linecap="round"/>
+                    <path d="M 41 63 A 9 9 0 0 1 59 63" fill="none" stroke="#9b51e0" stroke-width="6.2" stroke-linecap="round"/>
+                </svg>
+                <span class="wordmark">RAINBOW</span>
+            </a>
+            <p class="tagline lang" data-ja="まだ活かせるものを、めぐらせる。" data-en="Keeping still-usable things in circulation.">まだ活かせるものを、めぐらせる。</p>
+            <p class="note lang" data-ja="石川県かほく市の個人事業" data-en="A sole proprietorship in Kahoku, Ishikawa">石川県かほく市の個人事業</p>
+            <nav class="footer-nav" aria-label="フッターナビゲーション">
+                <a href="#services" class="lang" data-ja="事業内容" data-en="Services">事業内容</a>
+                <a href="#partners" class="lang" data-ja="取引先の方へ" data-en="For Partners">取引先の方へ</a>
+                <a href="story.html" class="lang" data-ja="代表の物語" data-en="Founder's Story">代表の物語</a>
+                <a href="#contact" class="lang" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a>
+                <a href="policy.html" class="lang" data-ja="プライバシーポリシー" data-en="Privacy Policy">プライバシーポリシー</a>
+                <a href="tokutei.html" class="lang" data-ja="特定商取引法に基づく表記" data-en="Legal Notice">特定商取引法に基づく表記</a>
+                <a href="https://meguri-cycle.com/" target="_blank" rel="noopener noreferrer" class="lang" data-ja="めぐり自転車" data-en="Meguri Cycle">めぐり自転車</a>
+                <a href="https://wilier300227-oss.github.io/rainbow-portfolio/" target="_blank" rel="noopener noreferrer" class="lang" data-ja="ポートフォリオ" data-en="Portfolio">ポートフォリオ</a>
+            </nav>
+            <p class="copyright">&copy; 2026 RAINBOW</p>
         </div>
     </footer>
 
