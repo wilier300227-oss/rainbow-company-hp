@@ -335,54 +335,62 @@ section {
   text-decoration: underline;
 }
 
-/* ---------- ヒーロー（動画背景） ---------- */
-.hero-video {
+/* ---------- 動画バンド（装飾・テキストなし） ---------- */
+.video-band {
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  min-height: calc(100vh - 65px);
-  min-height: calc(100dvh - 65px);
-  padding: 64px 0;
+  height: calc(100vh - 65px);
+  height: calc(100dvh - 65px);
+  padding: 0;
   background: var(--ink);
 }
 
-.hero-video .hero-bg {
+.video-band video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0;
 }
 
-.hero-overlay {
+.video-band-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.25);
 }
 
-.hero-content {
-  position: relative;
-  max-width: 1040px;
-  width: 100%;
+/* 動きを止める設定では動画バンドごと非表示 */
+@media (prefers-reduced-motion: reduce) {
+  .video-band {
+    display: none;
+  }
 }
 
-.hero-video h1,
-.hero-video p {
-  color: #fff;
+/* ---------- ヒーロー ---------- */
+.hero {
+  padding: 64px 0 80px;
 }
 
-.hero-video .hero-eyebrow {
-  color: rgba(255, 255, 255, 0.8);
+@media (min-width: 768px) {
+  .hero {
+    padding: 96px 0 128px;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
 }
 
 .hero-eyebrow {
   font-size: 14px;
+  color: var(--ink-2);
   margin-bottom: 16px;
 }
 
-.hero-video h1 {
+.hero h1 {
   margin-bottom: 24px;
 }
 
@@ -393,32 +401,15 @@ section {
   margin-top: 32px;
 }
 
-.btn-hero-primary {
-  background: #fff;
-  color: var(--ink);
-  border: 1px solid #fff;
+.hero-image img {
+  display: block;
+  width: 100%;
+  mix-blend-mode: multiply;
 }
 
-.btn-hero-primary:hover {
-  color: var(--ink-2);
-  text-decoration: underline;
-}
-
-.btn-hero-ghost {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-}
-
-.btn-hero-ghost:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* 動きを止める設定では動画を出さず、墨ベタ背景で文字コントラストを維持 */
-@media (prefers-reduced-motion: reduce) {
-  .hero-video .hero-bg {
-    display: none;
+@media (max-width: 767px) {
+  .hero-image {
+    margin-top: 48px;
   }
 }
 
