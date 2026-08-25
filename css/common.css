@@ -359,7 +359,7 @@ section {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.7) 100%);
 }
 
 .hero-content {
@@ -373,7 +373,10 @@ section {
 }
 
 .hero-video .hero-eyebrow {
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  margin-bottom: 24px;
 }
 
 .hero-eyebrow {
@@ -381,14 +384,41 @@ section {
   margin-bottom: 16px;
 }
 
+@media (min-width: 768px) {
+  .hero-video .hero-eyebrow {
+    font-size: 18px;
+  }
+}
+
 .hero-video h1 {
-  font-size: 32px;
-  margin-bottom: 24px;
+  font-size: 30px;
+  line-height: 1.25;
+  margin-bottom: 32px;
 }
 
 @media (min-width: 768px) {
   .hero-video h1 {
-    font-size: 48px;
+    font-size: 80px;
+  }
+}
+
+.text-gradient {
+  background: var(--rainbow);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 900;
+}
+
+.hero-lead {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 40em;
+}
+
+@media (min-width: 768px) {
+  .hero-lead {
+    font-size: 20px;
   }
 }
 
